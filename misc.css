@@ -1,0 +1,178 @@
+/*
+Misc
+- Collapses document headers in the outline by default, allowing you to toggle whether sub-headers are shown by right clicking on them. All headers can be collapsed & expanded by right clicking on the outline header.
+- Filters document headers shown in the link creation menu to the ones matching the text in the URL input.
+- Removes the line separating pages in compact mode
+- Adds a large margin after the last page (50% of the screen minus 100pt)
+- Removes pointless garbage like "explore" and "app switching" buttons
+- Makes sidebars appear above the document like they should have in the first place
+- Fix pulse animation overflowing on highlighted text when in compact mode (for example, using find & navigating to a result at the edge of a page will cut off some of the highlight)
+- Adds new keyboard shortcuts:
+	- Ctrl + Shift + -
+		Inserts a horizontal line
+	- Ctrl + F
+		Like normal, focuses the search input. 
+		When text is selected, does a search for that text. 
+		When text is not selected, clears the search input.
+	- Ctrl + K
+		Like normal, opens the link creation tooltip.
+		When text is not selected, acts as normal.
+		When text is selected, and the URL input is currently blank, inserts that text into the URL input.
+
+
+Changelog:
+
+v0.5.0
+- Fix Nov 11th G.Docs update
+- Fix keyboard navigation of link creation url input document headers... kinda. (Most people don't need to navigate past that, right?)
+- Fix link creation url input document headers being filtered incorrectly
+- Highlight & force show headings in the outline when they match the text in Find
+- Add live word count fallback
+
+v0.4.0
+- Collapsed outline
+
+v0.3.0
+- Fixed suggestion highlights not appearing correctly
+- Added a highlight animation for suggestions
+
+v0.2.0
+- Fixed there being like a 9000px margin at the bottom of the document.
+- Added Ctrl + K keyboard shortcut.
+- Added filtering for document headers in the link creation URL input.
+
+*/
+
+
+/* Hide the line separating the pages in compact mode */
+.kix-page-compact::before {
+    border-top: none;
+}
+
+/* Add a big margin after the last page */
+.kix-paginateddocumentplugin {
+    margin-bottom: calc(50vh - 100pt);
+}
+
+/* Hide pointless garbage */
+.docs-explore-widget {
+	display: none;
+}
+
+.app-switcher-button {
+	visibility: hidden;
+}
+
+.docs-companion-app-switcher-container {
+	visibility: hidden;
+}
+
+/* Fix sidebars being covered by the document and not being aligned to the right side */
+.docs-dictionary-sidebar,
+.docs-explore-sidebar,
+.docs-onepick-integrated-sidebar,
+.script-application-sidebar,
+.addon-sidebar,
+.docs-contentembedding-sidebar {
+    z-index: 999;
+    right: 0 !important;
+}
+
+/* Fix pulse animation overflowing on highlighted text when in compact mode */
+.kix-paginateddocumentplugin-compact-mode .kix-page {
+	overflow: visible;
+}
+
+.kix-paragraphrenderer {
+    padding-top: 6px;
+    margin-top: -6px;
+    padding-bottom: 6px;
+    margin-bottom: -6px;
+    overflow: hidden;
+    padding-left: 6px;
+    margin-left: -6px;
+    padding-right: 12px;
+    margin-right: -12px;
+}
+
+.kix-paragraphrenderer + .kix-paragraphrenderer {
+    margin-top: -12px;
+}
+
+.suggest-changes-colorbar-arrow-down-ltr {
+    top: 0;
+}
+
+.kix-paginateddocumentplugin-compact-mode .kix-page,
+.kix-paginateddocumentplugin-compact-mode .kix-page-content-wrapper {
+	background: none !important;
+}
+
+.kix-paginateddocumentplugin-compact-mode {
+    background: var(--background-document, #fff);
+}
+
+/* Filtering out headers that don't match the text in the URL input */
+.suggestion-filtered-out {
+	display: block;
+	opacity: 0;
+	height: 0;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+/* Adds an animation to the suggestion highlights, but it's not good if you're typing */
+.suggest-changes-top-colorbar, .suggest-changes-bottom-colorbar {
+    /*animation: kix-overlay-pulse 200ms ease-in-out 1;*/
+}
+
+/* Outline collapsing */
+.navigation-item.hidden-nav-item:not(.nav-find-highlighted) {
+	display: none;
+}
+
+.navigation-item.nav-find-highlighted {
+	box-shadow: inset 4px 0 #4cff6a66;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+.navigation-item.nav-find-highlighted > .navigation-item-content {
+    color: #81ff4cad;
+}
+
+.navigation-widget-navigation-tab-button .navigation-item {
+    padding-left: 10px;
+}
+
+.nav-directory-heading > .navigation-item-content::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    margin-left: -24px;
+    opacity: 0.5;
+    top: 14px;
+    transform: rotate(-45deg);
+    transition: all .1s ease-in-out;
+    transition-property: transform, top;
+}
+
+.nav-directory-heading.open-nav-item > .navigation-item-content::before {
+    top: 11px;
+    transform: rotate(45deg);
+}
+
+.nav-directory-heading > .navigation-item-content {
+    position: relative;
+}
+
+.docs-gm .navigation-item .navigation-item-level-0 { padding-left: 30px; }
+.docs-gm .navigation-item .navigation-item-level-1 { padding-left: calc(30px + 16px * 1); }
+.docs-gm .navigation-item .navigation-item-level-2 { padding-left: calc(30px + 16px * 2); }
+.docs-gm .navigation-item .navigation-item-level-3 { padding-left: calc(30px + 16px * 3); }
+.docs-gm .navigation-item .navigation-item-level-4 { padding-left: calc(30px + 16px * 4); }
+.docs-gm .navigation-item .navigation-item-level-5 { padding-left: calc(30px + 16px * 5); }

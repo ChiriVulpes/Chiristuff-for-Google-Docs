@@ -1,0 +1,255 @@
+/*
+Comments Drawer
+- Makes the Comments History popout a drawer instead
+- Drastically cuts down the number of elements displayed in the history
+- Reduces the space between comment threads
+- Increases clarity for if & how a comment/suggestion was resolved
+
+
+Changelog:
+
+v0.3.0
+- Fix for Nov 11th G.Docs update
+
+v0.2.0
+- Fixed inconsistent comment threads
+- Re-add reply input animation
+
+v0.1.0
+- Fixed potential errors when opening due to elements being removed
+- Hide more unnecessary elements
+- Redesign comment threads to save even more space
+
+v0.0.0 (published to Chrome Web Store as v1.0.0)
+*/
+
+.docs-titlebar-buttons .docs-docos-activitybox {
+    height: 100vh !important;
+    width: 680px;
+    max-width: 35vw;
+    position: fixed;
+    top: 0;
+    right: 0;
+    border-top: none;
+    border-bottom: none;
+}
+
+.docos-enable-docs-header .docos-stream-view {
+    max-height: none;
+    height: calc(100% - 51px);
+    position: relative;
+}
+
+.docos-streampane-content {
+    max-height: 100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.docs-docos-activitybox-inner {
+    position: relative;
+}
+
+.docs-gm .docos-streamdocoview-inputcontainer {
+    padding: 0;
+    transition: margin .1s ease-in-out .4s, opacity .1s ease-in-out .55s;
+    /*transition: margin 0s ease-in-out .4s, opacity .1s ease-in-out .45s;*/
+}
+
+.docs-gm .docos-streamdocoview-input-pane .docos-input-textarea {
+    border: none !important;
+    margin-left: 10px;
+    width: calc(100% - 10px);
+    padding: 7px 8px !important;
+}
+
+.docs-gm .docos-streamdocoview-inputcontainer .docos-streamreplyview-avatar {
+    top: 5px;
+}
+
+.docs-gm .docos-streamdocoview-inputcontainer:focus-within {
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 2px #1a73e8;
+}
+
+.docs-gm .docos-input-buttons {
+    padding-bottom: 10px;
+}
+
+.docos-input.docos-docoview-input-pane.docos-streamdocoview-input-pane:not(.docos-input-typing) {
+    height: 43px;
+}
+
+.docos-input.docos-docoview-input-pane.docos-streamdocoview-input-pane:not(.docos-input-typing) .docos-input-textarea {
+    height: 43px;
+    padding-top: 12px !important;
+}
+
+.docs-gm .resolution-message {
+    display: none;
+}
+
+.docos-streamdocoview.really-truly-resolved {
+    background-color: #f6f6f6;
+}
+
+.docos-streamdocoview.really-truly-resolved.accepted {
+    background-color: #eef7ee;
+    border-color: #b7d3b7;
+}
+
+.docos-streamdocoview.really-truly-resolved.rejected {
+    background-color: #f7eeee;
+    border-color: #d3b7b7;
+}
+
+.docs-gm .docos-streamdocoview:not(.docos-docoview-active):not(:hover):not(:focus-within) .docos-streamdocoview-inputcontainer {
+    margin-top: -60px;
+    opacity: 0;
+    transition: margin .2s ease-in-out .5s, opacity .2s ease-in-out .5s;
+    pointer-events: none;
+}
+
+.docs-gm .docos-streamdocoview.resolved-by-self {
+	display: none !important;
+}
+
+
+.goog-inline-block.locked-visible > #docs-docos-commentsbutton {
+    pointer-events: none;
+}
+
+.docs-docos-activitybox.locked-visible {
+	visibility: visible !important;
+	display: block !important;
+}
+
+#docs-editor, #docs-chrome {
+	width: var(--real-width, 100vw) !important;
+}
+
+.docs-gm .docos-streamdocoview {
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    margin: 0;
+    border-radius: 0;
+    padding-top: 13px;
+    --resolve-color: #aaa7
+}
+
+.docos-stream-view {
+    padding: 0;
+}
+
+.docs-gm .docos-streamdocoview:not(:last-child)::after {
+    content: "";
+    display: block;
+    width: calc(100% - 5px);
+    margin-left: 10px;
+    height: 1px;
+    background-color: var(--resolve-color);
+    margin-top: 16px;
+    margin-bottom: -16px;
+}
+
+.docs-gm .docos-streamdocoview.really-truly-resolved {
+    box-shadow: inset 3px 0 0 var(--resolve-color);
+}
+
+.docos-streamdocoview.really-truly-resolved.accepted {
+    --resolve-color: #7cbc7c77;
+}
+.docos-streamdocoview.really-truly-resolved.rejected {
+    --resolve-color: #93545477;
+}
+
+.docos-streamdocoview.really-truly-resolved {
+	border-left: none;
+}
+
+.docs-gm .docos-streamdocoview-inputcontainer, .docs-gm .docos-streamdocoview-replycontainer {
+    margin-left: -45px;
+    margin-right: -14px;
+}
+
+.docs-gm .docos-streamdocoview-replycontainer {
+    margin-top: -10px;
+}
+
+.docs-gm .docos-streamdocoview-replycontainer:empty {
+    /*margin-top: -36px;*/
+}
+
+.docs-gm .docos-streamdocoview-replycontainer:empty + .docos-streamdocoview-inputcontainer {
+    /* margin-top: 6px; */
+}
+
+.docs-gm .docos-streamreplyview {
+    background: none;
+    border: none;
+}
+
+.docs-gm .docos-streamreplyview + .docos-streamreplyview {
+    margin-top: -25px;
+}
+
+.docs-gm .docos-streamdocoview-inputcontainer {
+    background: none;
+    border: none;
+    margin-top: -20px;
+    margin-bottom: -10px;
+}
+
+.docos-streamdocoview-input-pane .docos-input-textarea {
+    background: none;
+}
+
+.docos-streamdocoview-controls:empty {
+    display: none;
+}
+
+.hidden-unused {
+	display: none !important;
+}
+
+.docs-gm .docos-streamdocoview-controls > .hidden-unused + div > .docos-streamdocoview-bullet {
+    display: none;
+}
+
+.docos-streamdocoview-input-pane .docos-input-textarea, .docos-streamdocoview-input-pane.docos-input-typing .docos-input-textarea {
+	background: none !important;
+}
+
+.docs-gm .docos-streamdocoview:not(.docos-docoview-active):not(:hover):not(:focus-within) .docos-streamdocoview-inputcontainer .docos-input-textarea {
+    height: 23px;
+}
+
+.docs-gm .docos-streamdocoview:not(.docos-docoview-active):not(:hover):not(:focus-within) .docos-streamdocoview-inputcontainer .docos-input-buttons {
+    display: none;
+}
+
+.docs-docos-activitybox {
+    border: none;
+}
+
+.docos-streampane-header {
+    border-left: 1px solid var(--border-comments-history, #cbcbcb);
+}
+
+.docos-streamrootreplyview, .docos-docoview-rootreply {
+    min-height: auto;
+}
+
+.docs-gm .docos-streamreplyview {
+    margin-bottom: 0;
+}
+
+.docos-streamdocoview-replycontainer {
+    min-height: 22px;
+}
+
+.docs-gm .docos-streamdocoview-inputcontainer {
+	display: block !important;
+}

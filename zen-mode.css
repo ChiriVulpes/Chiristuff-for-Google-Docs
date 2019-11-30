@@ -1,0 +1,256 @@
+/*
+Zen Mode
+- Adds a new display mode toggled by right clicking the Google Docs logo, or Alt+F11, "Zen Mode"
+- Zen Mode hides almost all elements by default, leaving only your document
+- The toolbar and menu bars are hidden, but will slide into place when your mouse is near the top
+- Comments are hidden by default, but will appear when focused
+- The live word count will appear at the bottom, subtle and out of the way
+
+
+Changelog:
+
+v0.4.0
+- Fix for Nov 11th G.Docs update
+- Added a keybind for zen mode (alt + F11)
+- Fixed an error when opening documents you only have view access to
+- Fixed live word count active background
+- Moved outline button down & the header dropdown region back to the left
+
+v0.3.1
+- Fixed outline being on top of header
+
+v0.3.0
+- Fixed live word count appearing in the wrong vertical position
+- Live word count is now positioned horizontally near the document, rather than at the edge of the screen
+- The outline now takes up the full viewport height
+- Fixed the document being positioned after the invisible horizontal ruler, if it's toggled on
+- Fixed the cursor appearing above the toolbar/header
+
+v0.2.0
+- Fixed compatibility with comments drawer
+- Fixed cursor position breaking on viewport resize
+- Support viewing & toggling the outline while in zen mode
+
+v0.1.0
+- Fixed the gradient that appears when the live word count is visible being too high when there's no scrollbar
+- Made the live word count text clickable
+- Fixed the app-switcher sidebar being rendered in zen mode with no way to close it
+- Fixed sidebars that are open in zen mode not ignoring the app-switcher sidebar
+
+Issues:
+- Live word count menu is left-aligned rather than aligned to the word count
+
+*/
+
+.zen-mode {
+    --background-matte: var(--background-document, #fff);
+}
+
+.zen-mode .docs-gm #docs-editor, .zen-mode .docs-gm #docs-editor-container {
+    background: var(--background-matte);
+}
+
+.zen-mode .docs-gm .docos-anchoreddocoview {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease-in-out;
+    box-shadow: none;
+}
+
+.zen-mode .docs-gm .docos-anchoreddocoview.docos-docoview-active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.zen-mode .docs-ruler {
+    visibility: hidden;
+}
+
+.zen-mode #docs-chrome {
+    position: fixed;
+    transition: all .3s ease-in-out;
+    box-shadow: 0 0 5px #000c, 0 0 8px #0003;
+    z-index: 502;
+}
+
+.zen-mode #docs-chrome::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.zen-mode #docs-chrome:not(:hover):not(:focus-within) {
+    margin-top: -104px;
+    margin-bottom: 104px;
+    box-shadow: none;
+}
+
+.zen-mode .kix-paginateddocumentplugin-compact-mode {
+    box-shadow: none;
+}
+
+.zen-mode .kix-document-top-shadow-inner {
+    display: none;
+}
+
+.zen-mode #docs-branding-container {
+	filter: saturate(0);
+}
+
+#docs-chrome {
+    position: relative;
+    z-index: 24;
+}
+
+.docs-ruler {
+    position: relative;
+    z-index: 23;
+}
+
+.zen-mode .kix-appview-editor {
+    height: 100vh !important;
+}
+
+.zen-mode .kix-page-compact::before {
+    border-top: none;
+}
+
+.zen-mode .docs-explore-widget {
+	display: none;
+}
+
+.zen-mode .app-switcher-button {
+	visibility: hidden;
+}
+
+.zen-mode .kix-documentmetrics-widget {
+    background: linear-gradient(to bottom, transparent, var(--background-matte));
+    box-shadow: none;
+    border: none;
+    bottom: 0px;
+    width: 100%;
+    pointer-events: none;
+    height: 80px;
+    margin: 0;
+    padding: 16px 30px 0;
+    left: 0 !important;
+}
+
+.zen-mode.has-horizontal-scrollbar .kix-documentmetrics-widget {
+	bottom: 16px;
+}
+
+.zen-mode .kix-documentmetrics-widget .docs-material-gm-select-outer-box {
+    padding-bottom: 0;
+    padding-top: 55px;
+    margin: auto;
+    max-width: calc(var(--document-width) + 100px);
+}
+
+.zen-mode .kix-documentmetrics-widget .docs-material-gm-select-dropdown {
+    display: none;
+}
+
+.zen-mode .kix-documentmetrics-widget .docs-material-gm-select-caption {
+	pointer-events: all;
+}
+
+.zen-mode .kix-documentmetrics-widget.docs-material-gm-select-hover .docs-material-gm-select-outer-box,
+.zen-mode .kix-documentmetrics-widget.docs-material-gm-select-focused .docs-material-gm-select-outer-box {
+	background: none;
+}
+
+.zen-mode .docs-material-gm-select-hover .docs-material-gm-select-caption {
+	color: var(--color-link, #4285f4);
+}
+
+.zen-mode .docs-material-gm-select-outer-box:active {
+	box-shadow: none;
+	background: none;
+}
+
+.zen-mode .kix-documentmetrics-widget-menu {
+	top: auto !important;
+    left: 14px !important;
+    bottom: 40px;
+}
+
+.zen-mode.has-horizontal-scrollbar .kix-documentmetrics-widget-menu {
+    bottom: 56px;
+}
+
+.zen-mode .docs-companion-app-switcher-container {
+	visibility: hidden;
+}
+
+.zen-mode .docs-dictionary-sidebar,
+.zen-mode .docs-explore-sidebar,
+.zen-mode .docs-onepick-integrated-sidebar,
+.zen-mode .script-application-sidebar,
+.zen-mode .addon-sidebar,
+.zen-mode .docs-contentembedding-sidebar {
+    right: 0 !important;
+}
+
+.zen-mode .navigation-widget-navigation-tab-button.navigation-widget {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100%;
+    margin-bottom: 0;
+    margin-top: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+
+.zen-mode .left-sidebar-container {
+    top: 0 !important;
+    height: 100% !important;
+    overflow: hidden;
+    z-index: 501;
+}
+
+.zen-mode.has-vertical-ruler .left-sidebar-container {
+    margin-left: -14px;
+}
+
+.zen-mode:not(.has-horizontal-scrollbar) .left-sidebar-container {
+    transition: height 0s linear .1s;
+}
+
+.zen-mode .navigation-widget-content {
+    height: auto !important;
+}
+
+.zen-mode .docs-navigation-tab-button {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    opacity: 0 !important;
+    transition: opacity .3s ease-in-out 1s;
+    top: 100px;
+}
+
+.zen-mode .left-sidebar-container:hover .docs-navigation-tab-button[style*="opacity: 1"] {
+	opacity: 1 !important;
+	transition-delay: 0s;
+}
+
+.zen-mode .docs-navigation-tab-button:hover {
+    filter: brightness(1.3);
+}
+
+.zen-mode.has-horizontal-ruler .kix-appview-editor-container {
+    margin-top: -14px;
+}
+
+.zen-mode #docs-instant-button-bubble {
+    border: none;
+    background: transparent;
+}
+
+.zen-mode #docs-instant-button-bubble:hover {
+    background: transparent;
+}
