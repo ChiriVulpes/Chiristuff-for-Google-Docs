@@ -8,6 +8,14 @@ function toggleZenMode(e) {
 	if (e) e.preventDefault();
 }
 
+document.getElementById("docs-docos-commentsbutton")
+	.addEventListener("contextmenu", toggleZenModeNoComments);
+
+function toggleZenModeNoComments(e) {
+	document.documentElement.classList.toggle("zen-mode-no-comments");
+	if (e) e.preventDefault();
+}
+
 const editorWrapper = document.querySelector(".kix-appview-editor");
 setInterval(() => {
 	document.documentElement.classList.toggle("has-horizontal-scrollbar",
