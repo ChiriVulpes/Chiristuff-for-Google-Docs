@@ -254,3 +254,11 @@ Issues:
 .zen-mode #docs-instant-button-bubble:hover {
     background: transparent;
 }
+
+.zen-mode-no-comments .kix-commentoverlayrenderer-normal, .zen-mode-no-comments .kix-commentoverlayrenderer-highlighted {
+    display: none;
+}
+
+.zen-mode-no-comments .kix-discussion-plugin {
+    display: none;
+}
