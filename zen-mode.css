@@ -208,7 +208,7 @@ Issues:
 .zen-mode .left-sidebar-container {
     top: 0 !important;
     height: 100% !important;
-    overflow: hidden;
+/*     overflow: hidden; */
     z-index: 501;
 }
 
@@ -261,4 +261,13 @@ Issues:
 
 .zen-mode-no-comments .kix-discussion-plugin {
     display: none;
+}
+
+.zen-mode .navigation-widget-hat-close {
+    top: 110px;
+    right: -50px;
+}
+
+.zen-mode .navigation-widget:not(:hover) {
+    opacity: 0.2 !important;
 }
