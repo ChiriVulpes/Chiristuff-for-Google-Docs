@@ -41,6 +41,8 @@ setInterval(() => {
 
 window.addEventListener("mousemove", event => {
 	document.documentElement.classList.toggle("right-side-hovered", window.innerWidth - event.clientX < 200);
+	document.documentElement.classList.toggle("top-hovered-close", event.clientY < 105);
+	document.documentElement.classList.toggle("top-hovered", event.clientY < 210);
 });
 
 
