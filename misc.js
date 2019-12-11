@@ -3,14 +3,16 @@ setInterval(() => {
 
 	// custom keyboard shortcuts
 	const editingIFrame = document.querySelector("iframe.docs-texteventtarget-iframe");
-	if (editingIFrame) {
+	if (editingIFrame)
 		editingIFrame.contentDocument.addEventListener("keydown", onKeydown, false);
-	}
 
 	const urlInput = document.querySelector(".docs-link-urlinput-url");
-	if (urlInput) {
+	if (urlInput)
 		urlInput.addEventListener("input", filterLinkHeaders, false);
-	}
+
+	const editSuggestModeToggle = document.getElementById("docs-toolbar-mode-switcher");
+	if (editSuggestModeToggle)
+		editSuggestModeToggle.addEventListener("contextmenu", toggleEditSuggestMode, false);
 
 	// make dictionary entries link to google dictionary searches
 	document.querySelectorAll(".docs-explore-dictionaryentry-title")
@@ -97,6 +99,17 @@ async function onKeydown(event) {
 		}
 
 	}
+}
+
+function toggleEditSuggestMode(event) {
+	setTimeout(() => {
+		const suggesting = !document.querySelector("#docs-toolbar-mode-switcher .docs-icon-mode-edit");
+		simulateEvent(document.getElementById("docs-toolbar-mode-switcher"), "mousedown");
+		simulateClick(document.querySelector(`.docs-toolbar-mode-switcher-menu .${suggesting ? "docs-icon-mode-edit" : "docs-icon-acl-comment-only"}`)
+			.closest(".goog-menuitem"));
+	}, 1);
+	if (event) event.preventDefault();
+	return false;
 }
 
 // filter the document headers in the link edit suggestion box to the ones that match the link location
