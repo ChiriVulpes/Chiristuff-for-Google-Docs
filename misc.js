@@ -36,14 +36,14 @@ setInterval(() => {
 async function onKeydown(event) {
 
 	// toggle between editing and suggesting mode (replaces a default bind for only switching to editing)
-	if (event.code === "KeyZ" && event.ctrlKey && event.shiftKey && event.altKey) {
-		const suggesting = !document.querySelectorAll("#docs-toolbar-mode-switcher .docs-icon-mode-edit");
-		simulateEvent(document.getElementById("docs-toolbar-mode-switcher"), "mousedown");
-		simulateClick(document.querySelector(`.docs-toolbar-mode-switcher-menu .${suggesting ? "docs-icon-mode-edit" : "docs-icon-acl-comment-only"}`)
-			.closest(".goog-menuitem"));
-		event.preventDefault();
-		return false;
-	}
+// 	if (event.code === "KeyZ" && event.ctrlKey && event.shiftKey && event.altKey) {
+// 		const suggesting = !document.querySelectorAll("#docs-toolbar-mode-switcher .docs-icon-mode-edit");
+// 		simulateEvent(document.getElementById("docs-toolbar-mode-switcher"), "mousedown");
+// 		simulateClick(document.querySelector(`.docs-toolbar-mode-switcher-menu .${suggesting ? "docs-icon-mode-edit" : "docs-icon-acl-comment-only"}`)
+// 			.closest(".goog-menuitem"));
+// 		event.preventDefault();
+// 		return false;
+// 	}
 
 	// insert horizontal line
 	if (event.code === "Minus" && event.ctrlKey && event.shiftKey) {
