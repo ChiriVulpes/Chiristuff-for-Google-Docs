@@ -39,6 +39,10 @@ setInterval(() => {
 	}
 }, 500);
 
+window.addEventListener("mousemove", event => {
+	document.documentElement.classList.toggle("right-side-hovered", window.innerWidth - event.clientX < 200);
+});
+
 
 function forceRecenterDocument() {
 	const appSwitcherButton = document.querySelector(".companion-collapser-button-container .app-switcher-button");
