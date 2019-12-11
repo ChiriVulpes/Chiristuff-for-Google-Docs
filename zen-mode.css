@@ -271,3 +271,25 @@ Issues:
 .zen-mode .navigation-widget:not(:hover) {
     opacity: 0.2 !important;
 }
+
+.zen-mode #docs-toolbar-mode-switcher {
+    position: fixed;
+    top: 115px;
+    right: 41px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .3s ease-in .5s;
+}
+
+.zen-mode.right-side-hovered #docs-toolbar-mode-switcher {
+    opacity: 1;
+    transition: opacity .3s ease-out;
+}
+
+.zen-mode #docs-toolbar-mode-switcher .goog-toolbar-menu-button-caption {
+    width: auto !important;
+}
+
+.zen-mode #docs-toolbar-mode-switcher .goog-toolbar-menu-button-label {
+    display: none;
+}
