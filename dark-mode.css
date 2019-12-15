@@ -296,6 +296,8 @@ Probably Won't Bother:
     --background-diff-2: #00ffff21;
     --background-add-comment-bubble: #373737;
     --background-add-comment-bubble-hover: #555;
+    --background-collab: #444;
+    --color-collab: #aaa;
 }
 
 body {
@@ -1438,4 +1440,10 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 
 #docs-instant-button-bubble:hover {
     background: var(--background-add-comment-bubble-hover);
+}
+
+.docs-material .docs-presence-plus-widget-overflow-button {
+    background-color: var(--background-collab);
+    border-color: var(--background-header);
+    color: var(--color-collab);
 }
