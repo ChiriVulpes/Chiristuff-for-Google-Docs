@@ -255,14 +255,6 @@ Issues:
     background: transparent;
 }
 
-.zen-mode-no-comments .kix-commentoverlayrenderer-normal, .zen-mode-no-comments .kix-commentoverlayrenderer-highlighted {
-    display: none;
-}
-
-.zen-mode-no-comments .kix-discussion-plugin {
-    display: none;
-}
-
 .zen-mode .navigation-widget-hat-close {
     top: 110px;
     right: -50px;
@@ -291,5 +283,21 @@ Issues:
 }
 
 .zen-mode #docs-toolbar-mode-switcher .goog-toolbar-menu-button-label {
+    display: none;
+}
+
+.zen-mode-no-comments .kix-commentoverlayrenderer-normal, .zen-mode-no-comments .kix-commentoverlayrenderer-highlighted {
+    display: none;
+}
+
+.zen-mode-no-comments .kix-discussion-plugin {
+    display: none;
+}
+
+.zen-mode-no-comments .others-cursor {
+    display: none;
+}
+
+.zen-mode-no-comments .kix-selection-overlay[style*="background-color: "]:not([style*="background-color: rgb(0, 0, 0)"]) {
     display: none;
 }
