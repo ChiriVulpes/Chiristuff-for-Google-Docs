@@ -169,9 +169,11 @@ function updateNavItems() {
 		let cursor = nav;
 		while (cursor = cursor.previousElementSibling) {
 			const level = getLevel(cursor);
-			if (level > affectingLevel) continue;
+			const isHeading = !(level > affectingLevel);
+			cursor.classList.toggle("nav-directory-heading", isHeading);
+			if (!isHeading) continue;
+
 			affectingLevel = level - 1;
-			cursor.classList.add("nav-directory-heading");
 			const isOpen = cursor.classList.contains("open-nav-item");
 			nav.classList.toggle("hidden-nav-item", !isOpen);
 			if (!isOpen || affectingLevel === 0) break;
