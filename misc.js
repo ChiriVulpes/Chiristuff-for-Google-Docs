@@ -161,10 +161,10 @@ function onHeaderFocus(event) {
 
 
 // Outline Compression
-function getLevel(nav) { return +(nav.getAttribute("aria-label") || "9").slice(-1); }
+function getLevel(nav) { return +((nav.getAttribute("aria-label") || "9").slice(-1)); }
 
 function updateNavItems() {
-	document.querySelectorAll(".navigation-item:not([aria-label$='level 1'])").forEach(nav => {
+	document.querySelectorAll(".navigation-item").forEach(nav => {
 		let affectingLevel = getLevel(nav) - 1;
 		let cursor = nav;
 		while (cursor = cursor.previousElementSibling) {
