@@ -4,45 +4,6 @@ Dark Mode
 - Improves consistency of text highlights (uses the highlight same animation for focusing on each)
 
 
-Changelog:
-
-v0.5.0
-- Fix for Nov 11th G.Docs update
-- Offline indicator (needs touchup still)
-- Fixed live word count active background
-
-v0.4.0
-- Styled chat button
-- Styled "see new changes" button
-- Styled dictionary sidebar
-- Made comments highlights a bit darker
-
-v0.3.0
-- Lightened black table borders
-- Support ruler draggers for resizing table cells
-- Support cell border dropdown
-
-v0.2.0
-- Support "Share" dialog
-- Support "Custom Spacing" dialog
-- Support link creation & editing
-- Links are now a brighter blue colour in the document by default
-- Fixed underlined text not using text colour
-- Fixed outline not being supported fully
-- Fixed focusing and clicking on non-blue dialog buttons using a white background
-
-v0.1.0
-- Fixed list symbols not being coloured grey by default
-- Fixed other people's cursors being coloured differently
-- Highlighted comments now use the same border style and animation as highlighted find results
-- Fixed it being really hard to see highlighted resolved comments, uses the same border & animation as normal comments
-- Fixed live word count background when hovered
-- Fixed vertical ruler ticks & numbers
-- Fixed text styles dividers
-- Fixed text styles that are actually black not appearing as the grey they will in the document
-- Fixed the blue colour of active toolbar items being too dark
-
-
 Issues:
 - Warning for not being able to view word count
 - List styles
@@ -298,6 +259,19 @@ Probably Won't Bother:
     --background-add-comment-bubble-hover: #555;
     --background-collab: #444;
     --color-collab: #aaa;
+    --background-error: #3f0000;
+    --background-error-non-critical: #263f6f;
+    --background-error-hover: #510000;
+    --background-error-non-critical-hover: #34528b;
+    --background-spell-bubble: #333;
+    --border-spell-bubble: #3a3a3a;
+    --box-shadow-spell-bubble: #0005;
+    --background-spell-bubble-button-hover: #0004;
+    --background-spell-bubble-button-focus: var(--background-spell-bubble-button-hover);
+    --background-spell-bubble-suggestion-hover: var(--background-spell-bubble-button-hover);
+    --background-spell-bubble-suggestion-focus: var(--background-spell-bubble-suggestion-hover);
+    --color-spell-bubble-suggestion: var(--color-text);
+    --color-spell-bubble-suggestion-hover: #ddd;
 }
 
 body {
@@ -1448,4 +1422,47 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     background-color: var(--background-collab);
     border-color: var(--background-header);
     color: var(--color-collab);
+}
+
+.kix-spelling-error-highlighted-overlay-non-critical {
+    background: var(--background-error-non-critical);
+}
+
+.kix-spelling-error-highlighted-overlay {
+    background: var(--background-error);
+}
+
+.kix-spelling-error-hover-interceptor:hover + .kix-spelling-error-hover-overlay-non-critical {
+    background: var(--background-error-non-critical-hover);
+}
+
+.kix-spelling-error-hover-interceptor:hover + .kix-spelling-error-hover-overlay {
+    background: var(--background-error-hover);
+}
+
+.docs-gm .kix-spell-bubble {
+    background: var(--background-spell-bubble);
+    border-color: var(--border-spell-bubble);
+    box-shadow: var(--box-shadow-spell-bubble) 0px 1px 3px 1px;
+}
+
+.docs-gm .kix-spell-bubble-option:hover {
+    background: var(--background-spell-bubble-button-hover);
+}
+
+.kix-spell-bubble .kix-spell-bubble-suggestion-text {
+    color: var(--color-spell-bubble-suggestion);
+}
+
+.docs-gm .kix-spell-bubble-suggestion-text:hover {
+    background: var(--background-spell-bubble-suggestion-hover);
+    color: var(--color-spell-bubble-suggestion-hover);
+}
+
+.docs-gm .kix-spell-bubble-option:focus {
+    background: var(--background-spell-bubble-button-focus);
+}
+
+.docs-gm .kix-spell-bubble-suggestion-text:focus {
+    background: var(--background-spell-bubble-suggestion-focus);
 }
