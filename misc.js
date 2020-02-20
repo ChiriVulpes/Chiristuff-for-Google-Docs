@@ -166,19 +166,25 @@ function getLevel(nav) { return +((nav.getAttribute("aria-label") || "9").slice(
 
 function updateNavItems() {
 	document.querySelectorAll(".navigation-item").forEach(nav => {
-		let affectingLevel = getLevel(nav) - 1;
-		let cursor = nav;
-		while (cursor = cursor.previousElementSibling) {
-			const level = getLevel(cursor);
-			const isHeading = !(level > affectingLevel);
-			cursor.classList.toggle("nav-directory-heading", isHeading);
-			if (!isHeading) continue;
+		// if this nav was already hidden by a parent nav, don't bother processing it here
+		if (nav.classList.contains("hidden-nav-item")) 
+			return;
 
-			affectingLevel = level - 1;
-			const isOpen = cursor.classList.contains("open-nav-item");
-			nav.classList.toggle("hidden-nav-item", !isOpen);
-			if (!isOpen || affectingLevel === 0) break;
+		let headerLevel = getLevel(nav);
+		let child = nav;
+		let hasChildren = false;
+		const isOpen = nav.classList.contains("open-nav-item");
+		while (child = child.nextElementSibling) {
+			const level = getLevel(child);
+			// if this child is at the same level or a parent level to the nav, it's actually not a child
+			// which means no further elements will be either
+			if (level <= headerLevel)
+				break;
+			
+			hasChildren = true;
+			child.classList.toggle("hidden-nav-item", !isOpen);
 		}
+		nav.classList.toggle("nav-directory-heading", hasChildren);
 	});
 }
 
