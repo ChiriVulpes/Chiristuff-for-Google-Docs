@@ -26,8 +26,9 @@ setInterval(() => {
 
 	// inaccurate live word count fallback
 	const wordCountWrapper = document.getElementById("kix-documentmetrics-widget-content");
+	const wordCountWrapperWrapper = wordCountWrapper && wordCountWrapper.closest(".kix-documentmetrics-widget");
 	const wordCountWrapperText = wordCountWrapper && wordCountWrapper.textContent;
-	if (wordCountWrapperText && (wordCountWrapperText === "View word count" || wordCountWrapperText[0] === "~")) {
+	if (wordCountWrapperText && (wordCountWrapperText === "View word count" || wordCountWrapperText[0] === "~") && !wordCountWrapperWrapper.matches("[style*='display: none']")) {
 		const documentBody = document.querySelector(".kix-paginateddocumentplugin");
 		const wordCount = documentBody && documentBody.textContent.split(/\s+/g).filter(v => v && /\w/.test(v)).length;
 		wordCountWrapper.innerHTML = `~<span class="kix-documentmetrics-widget-number">${wordCount}</span> words`;
