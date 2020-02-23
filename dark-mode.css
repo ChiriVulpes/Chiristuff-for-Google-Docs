@@ -1466,3 +1466,7 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 .docs-gm .kix-spell-bubble-suggestion-text:focus {
     background: var(--background-spell-bubble-suggestion-focus);
 }
+
+.docs-access-level-indicator-menu .docs-access-level-indicator-menu-text {
+    color: var(--color-body);
+}
