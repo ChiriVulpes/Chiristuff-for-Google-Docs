@@ -559,10 +559,10 @@ body {
     box-shadow: none;
 }
 
-.docs-gm .docos-anchoreddocoview.docos-docoview-active,
-.docs-gm .docos-anchoreddocoview.docos-docoview-active, 
-.docs-gm .docos-anchoreddocoview.docos-docoview-active:hover,
-.docs-gm .docos-anchoreddocoview:hover {
+.docos.docs-gm .docos-anchoreddocoview.docos-docoview-active,
+.docos.docs-gm .docos-anchoreddocoview.docos-docoview-active, 
+.docos.docs-gm .docos-anchoreddocoview.docos-docoview-active:hover,
+.docos.docs-gm .docos-anchoreddocoview:hover {
     box-shadow: 0 2px 6px 2px var(--box-shadow-document-comment-thread-active);
 }
 
@@ -736,7 +736,7 @@ body {
     color: var(--color-comments-history-reply-input);
 }
 
-.docs-gm .docos-streamdocoview.docos-docoview-active {
+.docos.docs-gm .docos-streamdocoview.docos-docoview-active {
     background: var(--background-comments-history-comment-active);
     --border-comments-history-comment: var(--border-comments-history-comment-active);
 }
