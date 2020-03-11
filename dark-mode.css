@@ -272,6 +272,11 @@ Probably Won't Bother:
     --background-spell-bubble-suggestion-focus: var(--background-spell-bubble-suggestion-hover);
     --color-spell-bubble-suggestion: var(--color-text);
     --color-spell-bubble-suggestion-hover: #ddd;
+    --gradient-stop-outline-top: #0007;
+    --color-outline-heading-hover: #999;
+    --color-outline-heading-current: var(--color-text-link);
+    --color-text-link-hover: #41adff;
+    --color-outline-heading-current-hover: var(--color-text-link-hover);
 }
 
 body {
@@ -1469,4 +1474,28 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 
 .docs-access-level-indicator-menu .docs-access-level-indicator-menu-text {
     color: var(--color-body);
+}
+
+.outline-refresh #navigation-widget-bottom-fade {
+    background: linear-gradient(transparent 0%, var(--background-matte) 100%);
+}
+
+.outline-refresh:not([class*="docs-hc"]) #navigation-widget-top-shadow::after {
+    background: linear-gradient(270deg, var(--background-matte) 0%, transparent 101%);
+}
+
+.outline-refresh:not([class*="docs-hc"]) #navigation-widget-top-shadow::before {
+    background: linear-gradient(var(--gradient-stop-outline-top), transparent);
+}
+
+.outline-refresh .navigation-item.goog-button-hover {
+    color: var(--color-outline-heading-hover);
+}
+
+.outline-refresh .location-indicator-highlight.navigation-item {
+    color: var(--color-outline-heading-current);
+}
+
+.outline-refresh .location-indicator-highlight.navigation-item.goog-button-hover {
+    color: var(--color-outline-heading-current-hover);
 }
