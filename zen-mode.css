@@ -195,9 +195,9 @@ Issues:
     right: 0 !important;
 }
 
-.zen-mode .navigation-widget-navigation-tab-button.navigation-widget {
+.zen-mode .navigation-widget-navigation-tab-button.navigation-widget.outline-refresh {
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto auto 1fr;
     height: 100%;
     margin-bottom: 0;
     margin-top: 0;
@@ -258,6 +258,11 @@ Issues:
 .zen-mode .navigation-widget-hat-close {
     top: 110px;
     right: -50px;
+	position: absolute;
+}
+
+.zen-mode .navigation-widget-hat {
+	height: 100px;
 }
 
 .zen-mode .navigation-widget:not(:hover) {
