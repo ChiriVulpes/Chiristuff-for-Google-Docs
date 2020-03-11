@@ -1499,3 +1499,8 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 .outline-refresh .location-indicator-highlight.navigation-item.goog-button-hover {
     color: var(--color-outline-heading-current-hover);
 }
+
+/* Hide white backgrounds on text */
+.kix-lineview-background > div[style*="background-color:#ffffff"] {
+    display: none;
+}
