@@ -165,27 +165,32 @@ function onHeaderFocus(event) {
 function getLevel(nav) { return +((nav.getAttribute("aria-label") || "9").slice(-1)); }
 
 function updateNavItems() {
-	document.querySelectorAll(".navigation-item").forEach(nav => {
-		// if this nav was already hidden by a parent nav, don't bother processing it here
-		if (nav.classList.contains("hidden-nav-item")) 
-			return;
+	for (const nav of document.querySelectorAll(".navigation-item")) {
+        if (!nav.classList.contains("navigation-item"))
+            break;
 
-		let headerLevel = getLevel(nav);
-		let child = nav;
-		let hasChildren = false;
-		const isOpen = nav.classList.contains("open-nav-item");
-		while (child = child.nextElementSibling) {
-			const level = getLevel(child);
-			// if this child is at the same level or a parent level to the nav, it's actually not a child
-			// which means no further elements will be either
-			if (level <= headerLevel)
-				break;
-			
-			hasChildren = true;
-			child.classList.toggle("hidden-nav-item", !isOpen);
+		let hide = false;
+		let affectedLevel = getLevel(nav) - 1;
+		let previousNav = nav;
+		while (previousNav = previousNav.previousElementSibling) {
+			const level = getLevel(previousNav);
+			if (level <= affectedLevel) {
+				affectedLevel = level;
+				if (!previousNav.classList.contains("open-nav-item")) {
+					hide = true;
+					break;
+				}
+			}
 		}
-		nav.classList.toggle("nav-directory-heading", hasChildren);
-	});
+
+		nav.classList.toggle("hidden-nav-item", hide);
+	}
+
+	for (const nav of document.querySelectorAll(".navigation-item")) {
+		const level = getLevel(nav);
+		const nextNav = nav.nextElementSibling;
+		nav.classList.toggle("nav-directory-heading", nextNav ? getLevel(nextNav) > level : false);
+	}
 }
 
 function onNavItemContextMenu(event) {
@@ -213,25 +218,6 @@ setInterval(() => {
 		.forEach(nav => nav.addEventListener("contextmenu", onNavItemContextMenu, false));
 	document.querySelectorAll(".navigation-widget-hat")
 		.forEach(header => header.addEventListener("contextmenu", onNavHeaderContextMenu, false));
-
-	const findInput = document.querySelector(".docs-findinput-input");
-	const findDialog = findInput && findInput.closest(".docs-slidingdialog");
-	const isOpen = findDialog && findDialog.style.display !== "none";
-	const findFilterWords = !isOpen ? "" : findInput.value
-		.trim()
-		.toLowerCase()
-		.split(/\s+/g)
-		.filter(w => w);
-
-	document.querySelectorAll(".navigation-item")
-		.forEach(nav => {
-			let highlighted = findFilterWords.length > 0;
-			if (highlighted) {
-				const headerWords = nav.textContent.trim().toLowerCase().split(/\s+/g);
-				highlighted = findFilterWords.every(word => headerWords.some(headerWord => headerWord.startsWith(word)));
-			}
-			nav.classList.toggle("nav-find-highlighted", highlighted);
-		});
 }, 500);
 
 
