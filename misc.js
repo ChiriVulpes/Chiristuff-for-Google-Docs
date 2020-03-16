@@ -175,7 +175,7 @@ function updateNavItems() {
 		while (previousNav = previousNav.previousElementSibling) {
 			const level = getLevel(previousNav);
 			if (level <= affectedLevel) {
-				affectedLevel = level;
+				affectedLevel = level - 1;
 				if (!previousNav.classList.contains("open-nav-item")) {
 					hide = true;
 					break;
