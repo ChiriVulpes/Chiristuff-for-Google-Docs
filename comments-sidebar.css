@@ -38,6 +38,7 @@ v0.0.0 (published to Chrome Web Store as v1.0.0)
     max-height: none;
     height: calc(100% - 51px);
     position: relative;
+	padding: unset;
 }
 
 .docos-streampane-content {
