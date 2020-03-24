@@ -8,9 +8,6 @@ function toggleZenMode(e) {
 	if (e) e.preventDefault();
 }
 
-document.getElementById("docs-docos-commentsbutton")
-	.addEventListener("contextmenu", toggleZenModeNoComments);
-
 function toggleZenModeNoComments(e) {
 	document.documentElement.classList.toggle("zen-mode-no-comments");
 	if (e) e.preventDefault();
@@ -18,6 +15,9 @@ function toggleZenModeNoComments(e) {
 
 const editorWrapper = document.querySelector(".kix-appview-editor");
 setInterval(() => {
+	const commentsButton = document.getElementById("docs-docos-commentsbutton");
+	if (commentsButton) commentsButton.addEventListener("contextmenu", toggleZenModeNoComments);
+	
 	document.documentElement.classList.toggle("has-horizontal-scrollbar",
 		editorWrapper.scrollWidth > editorWrapper.clientWidth);
 
