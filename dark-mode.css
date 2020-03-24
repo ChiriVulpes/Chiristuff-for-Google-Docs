@@ -1552,7 +1552,8 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     background: var(--background-request-edit-access-button-hover);
 }
 
-#titlebar-mode-indicator-container>.docs-material-menu-button-flat-primary-focused, .kix-titlebar-request-access-button.docs-material-button.docs-material-button-focused, .kix-titlebar-approvals-button.docs-material-button.docs-material-button-focused {
+#titlebar-mode-indicator-container>.docs-material-menu-button-flat-primary-focused, .kix-titlebar-request-access-button.docs-material-button.docs-material-button-focused, .kix-titlebar-approvals-button.docs-material-button.docs-material-button-focused,
+#titlebar-mode-indicator-container>.docs-material-menu-button-flat-primary-hover.docs-material-menu-button-flat-primary-focused, .kix-titlebar-request-access-button.docs-material-button.docs-material-button-hover.docs-material-button-focused, .kix-titlebar-approvals-button.docs-material-button.docs-material-button-hover.docs-material-button-focused {
     background: var(--background-request-edit-access-button-active);
 }
 
