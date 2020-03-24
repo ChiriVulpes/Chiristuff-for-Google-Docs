@@ -70,7 +70,7 @@ Issues:
     position: fixed;
     transition: all .3s ease-in-out;
     box-shadow: 0 0 5px #000c, 0 0 8px #0003;
-    z-index: 502;
+/*     z-index: 502; */
 }
 
 .zen-mode #docs-chrome::after {
@@ -102,7 +102,7 @@ Issues:
 
 #docs-chrome {
     position: relative;
-    z-index: 24;
+    z-index: 506;
 }
 
 .docs-ruler {
