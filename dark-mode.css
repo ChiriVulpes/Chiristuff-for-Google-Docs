@@ -1523,7 +1523,8 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     border-color: var(--border-picker);
 }
 
-.picker-iframe.picker-white-callout.picker-minew .picker-min-arrow-up .picker-min-arrow-inner {
+.picker-iframe.picker-white-callout.picker-minew .picker-min-arrow-up .picker-min-arrow-inner,
+.picker-iframe.picker-minew .picker-min-arrow-up .picker-min-arrow-inner {
     border-color: var(--background-picker-header) transparent;
 }
 
@@ -1557,7 +1558,8 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     background: var(--background-request-edit-access-button-active);
 }
 
-.Qe-Xf-cb-Od.Qe-Vq-fg {
+.Qe-Xf-cb-Od.Qe-Vq-fg,
+.Qe-Xf-cb-Od.Qe-jk-hc {
     background: var(--background-picker-header);
     box-shadow: inset 0 -1px var(--border-picker);
 }
@@ -1568,7 +1570,8 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 
 .Qe-Il-db-ik,
 .Qe-Il-Hj-Id-of-Pg,
-.Qe-Il-Kl {
+.Qe-Il-Kl,
+.Qe-Il-Ll-Ii-u {
     filter: invert();
 }
 
@@ -1577,7 +1580,8 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 }
 
 .Qe-Tq .Qe-eb-Kc {
-    border-color: var(--border-picker-inner);
+    border-top-color: var(--border-picker-inner);
+    border-bottom-color: var(--border-picker);
 }
 
 .Qe-Tq .Qe-Xf-ub-rn .Qe-Xf-ub-tb {
