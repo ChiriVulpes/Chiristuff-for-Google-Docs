@@ -1587,3 +1587,15 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 .Qe-Tq .Qe-Xf-ub-rn .Qe-Xf-ub-tb {
     background: var(--background-picker-item-hover);
 }
+
+.Qe-Il-Jl-n-Pg, .Qe-Il-lb-ae {
+    filter: invert();
+}
+
+.Qe-Xf-b-Wf .d-u-v, .Qe-Xf-b-Wf .d-u-W {
+    border-color: transparent;
+}
+
+.Qe-Xf-b-Wf .d-u-v > *, .Qe-Xf-b-Wf .d-u-W > * {
+    opacity: 1;
+}
