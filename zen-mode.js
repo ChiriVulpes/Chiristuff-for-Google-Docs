@@ -13,11 +13,11 @@ function toggleZenModeNoComments(e) {
 	if (e) e.preventDefault();
 }
 
-const editorWrapper = document.querySelector(".kix-appview-editor");
 setInterval(() => {
 	const commentsButton = document.getElementById("docs-docos-commentsbutton");
 	if (commentsButton) commentsButton.addEventListener("contextmenu", toggleZenModeNoComments);
 	
+	const editorWrapper = document.querySelector(".kix-appview-editor");
 	document.documentElement.classList.toggle("has-horizontal-scrollbar",
 		editorWrapper.scrollWidth > editorWrapper.clientWidth);
 
