@@ -58,7 +58,7 @@ Probably Won't Bother:
     --border-ruler-division: #555;
     --background-ruler-document: #333;
     --background-toolbar-button-hover: #444;
-    --background-toolbar-button-active: #3e4f64;
+    --background-toolbar-button-active: #3d454f;
     --border-toolbar-button-divider: #666;
     --border-collab: var(--background-header);
     --background-document: #222;
@@ -1557,6 +1557,16 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 #titlebar-mode-indicator-container>.docs-material-menu-button-flat-primary-hover.docs-material-menu-button-flat-primary-focused, .kix-titlebar-request-access-button.docs-material-button.docs-material-button-hover.docs-material-button-focused, .kix-titlebar-approvals-button.docs-material-button.docs-material-button-hover.docs-material-button-focused {
     background: var(--background-request-edit-access-button-active);
 }
+
+.docs-gm .docs-material .goog-toolbar-menu-button-open .docs-icon-img:not(.docs-icon-document):not(.docs-icon-indent-bottom):not(.docs-icon-ruler-first-indent-drag-blue500),
+.docs-gm .docs-material .goog-toolbar-button-active .docs-icon-img:not(.docs-icon-document):not(.docs-icon-indent-bottom):not(.docs-icon-ruler-first-indent-drag-blue500),
+.docs-gm .docs-material .goog-toolbar-button-checked .docs-icon-img:not(.docs-icon-document):not(.docs-icon-indent-bottom):not(.docs-icon-ruler-first-indent-drag-blue500) {
+    filter: brightness(1.2);
+}
+
+
+
+/* broken drive file picker css since the classes change cuz google is dum */
 
 .Qe-Xf-cb-Od.Qe-Vq-fg,
 .Qe-Xf-cb-Od.Qe-jk-hc {
