@@ -1,5 +1,3 @@
-// v0.3.0
-
 let comments;
 let lockedVisible = false;
 let ignoreNextCommentsVisibilityChange = true;
