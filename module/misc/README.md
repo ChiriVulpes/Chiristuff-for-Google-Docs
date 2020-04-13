@@ -1,0 +1,19 @@
+## Misc
+- Collapses document headers in the outline by default, allowing you to toggle whether sub-headers are shown by right clicking on them. All headers can be collapsed & expanded by right clicking on the outline header.
+- Filters document headers shown in the link creation menu to the ones matching the text in the URL input.
+- Removes the line separating pages in compact mode
+- Adds a large margin after the last page (50% of the screen minus 100pt)
+- Removes pointless garbage like "explore" and "app switching" buttons
+- Makes sidebars appear above the document like they should have in the first place
+- Fix pulse animation overflowing on highlighted text when in compact mode (for example, using find & navigating to a result at the edge of a page will cut off some of the highlight)
+- Adds new keyboard shortcuts:
+	- `Ctrl + Shift + -`
+		- Inserts a horizontal line
+	- `Ctrl + F`
+		- Like normal, focuses the search input. 
+		- When text is selected, does a search for that text. 
+		- When text is not selected, clears the search input.
+	- `Ctrl + K`
+		- Like normal, opens the link creation tooltip.
+		- When text is not selected, acts as normal.
+		- When text is selected, and the URL input is currently blank, inserts that text into the URL input.

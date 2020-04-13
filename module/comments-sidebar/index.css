@@ -1,28 +1,3 @@
-/*
-Comments Drawer
-- Makes the Comments History popout a drawer instead
-- Drastically cuts down the number of elements displayed in the history
-- Reduces the space between comment threads
-- Increases clarity for if & how a comment/suggestion was resolved
-
-
-Changelog:
-
-v0.3.0
-- Fix for Nov 11th G.Docs update
-
-v0.2.0
-- Fixed inconsistent comment threads
-- Re-add reply input animation
-
-v0.1.0
-- Fixed potential errors when opening due to elements being removed
-- Hide more unnecessary elements
-- Redesign comment threads to save even more space
-
-v0.0.0 (published to Chrome Web Store as v1.0.0)
-*/
-
 .docs-titlebar-buttons .docs-docos-activitybox {
     height: 100vh !important;
     width: 680px;
