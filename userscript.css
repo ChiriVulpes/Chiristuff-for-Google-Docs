@@ -1,0 +1,7 @@
+html, body {
+    background: #000;
+}
+
+html:not(.show-everything) * {
+    opacity: 0;
+}
