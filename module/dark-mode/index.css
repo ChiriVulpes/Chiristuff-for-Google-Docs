@@ -70,6 +70,8 @@
     --color-button-disabled: #999;
     --color-document-comment-thread-input: #aaa;
     --background-scrollbar: #444;
+    --background-scrollbar-hover: #555;
+    --background-scrollbar-active: #333;
     --background-comment: #ffdb5b12;
 	--border-comment-highlighted: #ffdb5b8c; 
     /*--background-comment-highlighted: #ffdb5b44;*/
@@ -1668,13 +1670,26 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     color: var(--color-document-title);
 }
 
-::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-corner, ::-webkit-scrollbar-track-piece {
+[current-url^="https://docs.google.com/document/u/"] ::-webkit-scrollbar, 
+[current-url^="https://docs.google.com/document/u/"] ::-webkit-scrollbar-track, 
+[current-url^="https://docs.google.com/document/u/"] ::-webkit-scrollbar-corner, 
+[current-url^="https://docs.google.com/document/u/"] ::-webkit-scrollbar-track-piece {
     background: var(--background-matte) !important;
 }
 
-::-webkit-scrollbar-thumb {
+[current-url^="https://docs.google.com/document/u/"] ::-webkit-scrollbar-thumb {
     border-color: var(--background-matte);
     background: var(--background-scrollbar);
+}
+
+[current-url^="https://docs.google.com/document/u/"] ::-webkit-scrollbar-thumb:hover {
+	background: var(--background-scrollbar-hover);
+	box-shadow: none;
+}
+
+[current-url^="https://docs.google.com/document/u/"] ::-webkit-scrollbar-thumb:active {
+	background: var(--background-scrollbar-active);
+	box-shadow: none;
 }
 
 .docs-homescreen-gb-container > header > div:first-child > div {
