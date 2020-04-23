@@ -23,7 +23,7 @@
     --background-outline-button: #222;
     --border-outline-button: #333;
     --box-shadow-outline-button: #000;
-    --background-outline: #222;
+    /* --background-outline: #222; */
     --box-shadow-outline: #000;
     --fill-outline-close: #fff;
     --color-outline-title: #ccc;
@@ -395,10 +395,10 @@ body {
     box-shadow: var(--box-shadow-outline-button) 0px 1px 2px 0px;
 }
 
-.navigation-widget-navigation-tab-button.navigation-widget {
+/* .navigation-widget-navigation-tab-button.navigation-widget {
     background: var(--background-outline);
     box-shadow: var(--box-shadow-outline) 0px 1px 3px 1px;
-}
+} */
 
 .docs-gm .navigation-widget-hat-title {
     color: var(--color-outline-title);
@@ -584,7 +584,7 @@ body {
     color: var(--color-document-comment-thread) !important;
 }
 
-.docos.docs-gm.docos-gm-blue .docos-accept-suggestion path, .docos.docs-gm.docos-gm-blue .docos-reject-suggestion path {
+.docos.docs-gm .docos-accept-suggestion path, .docos.docs-gm .docos-reject-suggestion path {
     fill: var(--fill-document-suggestion-resolution-button);
 }
 
@@ -602,14 +602,14 @@ body {
     border-color: var(--border-button) !important;
 }
 
-.docos.docos-gm-blue.docs-gm .jfk-button.jfk-button-standard.jfk-button-hover,
-.docos.docos-gm-blue.docs-gm .jfk-button.jfk-button-standard.jfk-button-focused,
-.docos.docos-gm-blue.docs-gm .jfk-button.jfk-button-standard.jfk-button-focused.jfk-button-hover {
+.docos.docs-gm .jfk-button.jfk-button-standard.jfk-button-hover,
+.docos.docs-gm .jfk-button.jfk-button-standard.jfk-button-focused,
+.docos.docs-gm .jfk-button.jfk-button-standard.jfk-button-focused.jfk-button-hover {
     background: var(--background-button-hover);
     border-color: var(--border-button-hover) !important;
 }
 
-.docos.docos-gm-blue.docs-gm .jfk-button.jfk-button-standard {
+.docos.docs-gm .jfk-button.jfk-button-standard {
     color: var(--color-button-blue);
 }
 
@@ -684,16 +684,16 @@ body {
     border-color: var(--border-comments-history-header);
 }
 
-.docs-gm.docos-gm-blue .docos-new-comment-button, .docs-gm.docos-gm-blue .docos-notification-settings .goog-flat-menu-button {
+.docs-gm .docos-new-comment-button, .docs-gm .docos-notification-settings .goog-flat-menu-button {
     background: transparent;
     color: var(--color-comments-history-button);
 }
 
-.docos-gm-blue .docos-gm-notification-icon-path, .docos-gm-blue .docos-new-comment-icon-path {
+.docs-gm .docos-gm-notification-icon-path, .docs-gm .docos-new-comment-icon-path {
     fill: var(--fill-comments-history-button);
 }
 
-.docs-gm.docos-gm-blue .docos-new-comment-button.jfk-button-hover, .docs-gm.docos-gm-blue .docos-new-comment-button.jfk-button-focused, .docs-gm.docos-gm-blue .docos-notification-settings .goog-flat-menu-button.goog-flat-menu-button-hover, .docs-gm.docos-gm-blue .docos-notification-settings .goog-flat-menu-button.goog-flat-menu-button-focused {
+.docs-gm .docos-new-comment-button.jfk-button-hover, .docs-gm .docos-new-comment-button.jfk-button-focused, .docs-gm .docos-notification-settings .goog-flat-menu-button.goog-flat-menu-button-hover, .docs-gm .docos-notification-settings .goog-flat-menu-button.goog-flat-menu-button-focused {
     background: var(--background-comments-history-button-hover);
 }
 
@@ -706,7 +706,7 @@ body {
     color: var(--color-comments-history-author);
 }
 
-.docs-gm.docos-gm-blue .docos-streamdocoview .docos-replyview-quote {
+.docs-gm .docos-streamdocoview .docos-replyview-quote {
     color: var(--color-comments-history-selected-text);
 }
 
