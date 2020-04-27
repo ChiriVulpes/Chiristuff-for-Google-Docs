@@ -1793,6 +1793,10 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     background: var(--background-documents-button-hover);
 }
 
+.docos-anchoredreplyview-origin {
+    border-color: var(--border-document-comment-thread-divider);
+}
+
 
 /* broken drive file picker css since the classes change cuz google is dum */
 
