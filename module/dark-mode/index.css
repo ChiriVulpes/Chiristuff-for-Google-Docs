@@ -1798,6 +1798,206 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 }
 
 
+/* New share */
+
+:root {
+    --background-popup: #222;
+    --background-popup-input: #111;
+    --background-popup-input-hover: #181818;
+    --shadow: #000;
+    --border-popup-seam: var(--background-popup);
+    --color-popup-title: #ccc;
+    --color-popup: #999;
+    --color-popup-primary: #ccc;
+    --color-popup-secondary: #888;
+    --color-popup-bolded: #ccc;
+    --color-popup-button-disabled: #fff8;
+    --color-popup-input: #bbb;
+    --border-popup-checkbox-hover: #999;
+    --background-popup-loading-bar: #181818;
+    --background-popup-list-hover: #333;
+    --background-popup-textarea: var(--background-popup-input);
+    --background-popup-dropdown-button: var(--background-popup-input);
+    --background-popup-textarea-hover: var(--background-popup-input-hover);
+    --background-popup-chip: #222;
+    --border-popup-divider: #444;
+    --background-popup-input-good: #243529;
+    --color-popup-input-good: #45c56a;
+    --background-popup-input-warn: #353224;
+    --color-popup-input-warn: #c5af45;
+    --background-popup-circle-icon: #282828;
+
+    /* overriding default vars */
+    --mdc-theme-surface: #282828;
+    --mdc-theme-on-surface: #ccc;
+    --mdc-theme-text-primary-on-background: #fff9;
+    --mdc-theme-text-secondary-on-background: #fff5;
+    --gm-colortextbutton-ink-color--stateful: #3c90ff;
+    --gm-neutraltextbutton-ink-color: #999;
+    --gm-neutraltextbutton-ink-color--stateful: #ccc;
+    --gm-chip-outline-color: #333;
+    --gm-chip-ink-color: #ccc;
+    --gm-chip-ink-color--stateful: #ddd;
+}
+
+.GmCard {
+    background-color: var(--background-popup);
+    box-shadow: 0 1px 2px 0 var(--shadow), 0 1px 3px 1px var(--shadow);
+}
+
+.boqDrivePeopleWebMultiselectPeoplePicker {
+    background-color: var(--background-popup-input);
+}
+
+.boqDrivesharedialogCommonScrollcontainerWrapper::before, .boqDrivesharedialogCommonScrollcontainerWrapper::after,
+.boqDrivesharedialogCommonScrollcontainerSeamCoverTop,
+.boqDrivesharedialogCommonScrollcontainerSeamCoverBottom {
+    border-color: var(--border-popup-seam);
+}
+
+.boqDrivesharedialogCommonTitlebarTitleBar .Heading .Title {
+    color: var(--color-popup-title);
+}
+
+.boqDrivesharedialogPermissionslistPermissionrowMain .boqDrivesharedialogPermissionslistPermissionrowPrimary {
+    color: var(--color-popup-primary);
+}
+
+.boqDrivesharedialogPermissionslistPermissionrowMain .boqDrivesharedialogPermissionslistPermissionrowSecondary {
+    color: var(--color-popup-secondary);
+}
+
+.boqDrivesharedialogLinkLinksummaryLinkPermissionsSummary .boqDrivesharedialogLinkLinksummaryBolded {
+    color: var(--color-popup-bolded);
+}
+
+.boqDrivesharedialogLinkLinksummaryLinkPermissionsSummary {
+    color: var(--color-popup);
+}
+
+.GmButtonGreyInkText:disabled {
+    color: var(--color-popup-button-disabled);
+}
+
+.mdc-icon-button::before {
+    background-color: #fff;
+}
+
+.boqDrivePeopleWebMultiselectPeoplePicker:hover {
+    background-color: var(--background-popup-input-hover);
+}
+
+:not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item::before, :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item::after {
+    background-color: #fff;
+}
+
+.boqDrivePeopleWebMultiselectInputchipInput {
+    color: var(--color-popup-input);
+}
+
+.GmCheckbox.mdc-checkbox--selected:hover .mdc-checkbox__ripple::before,
+.GmButtonText:hover .mdc-button__ripple::before,
+.appsMaterialWizButtonPaperbuttonEl:hover .appsMaterialWizButtonPaperbuttonFocusOverlay,
+.GmButtonGreyInkText:hover .mdc-button__ripple::before {
+    opacity: 0.1;
+}
+
+.GmCheckbox:hover .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background, .GmCheckbox:active .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background, .GmCheckbox:not(.mdc-ripple-upgraded):focus .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background, .GmCheckbox.mdc-ripple-upgraded--background-focused .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background {
+    border-color: var(--border-popup-checkbox-hover);
+}
+
+.GmCheckbox:not(.mdc-checkbox--selected) .mdc-checkbox__ripple::before, .GmCheckbox:not(.mdc-checkbox--selected) .mdc-checkbox__ripple::after,
+.appsMaterialWizChipAssistivechipHairline:not(.isDisabled) .appsMaterialWizChipAssistivechipFocusOverlay {
+    background-color: #fff;
+}
+
+.quantumWizProgressBuffer {
+    background-color: var(--background-popup-loading-bar);
+}
+
+.boqDrivesharedialogPermissionslistPermissionrowListItem:hover .boqDrivesharedialogPermissionslistPermissionrowPermissionRow, .boqDrivesharedialogPermissionslistPermissionrowListItem:focus-within .boqDrivesharedialogPermissionslistPermissionrowPermissionRow,
+.boqDrivesharedialogLinkLinkpermissionLinkPermissionRow:hover {
+    background-color: var(--background-popup-list-hover);
+}
+
+.appsMaterialWizTextinputTextareaFilled .appsMaterialWizTextinputTextareaMainContent {
+    background-color: var(--background-popup-textarea);
+}
+
+.boqDrivesharedialogPeoplePeopleinvitearearoleselectorRoleSelector .GmButtonGreyInkText:not(:disabled) {
+    background-color: var(--background-popup-dropdown-button);
+}
+
+.appsMaterialWizTextinputTextareaFilled:not(.isDisabled):hover .appsMaterialWizTextinputTextareaMainContent {
+    background-color: var(--background-popup-textarea-hover);
+}
+
+.appsMaterialWizTextinputTextareaInput {
+    color: var(--color-popup-input);
+}
+
+.boqDrivePeopleWebMultiselectChip {
+    background-color: var(--background-popup-input);
+}
+
+.boqDrivePeopleWebMultiselectChip:hover {
+    background-color: var(--background-popup-chip);
+}
+
+.GmChip:hover .mdc-chip__icon--trailing, .GmChip:active .mdc-chip__icon--trailing, .GmChip:not(.mdc-ripple-upgraded):focus .mdc-chip__icon--trailing, .GmChip.mdc-ripple-upgraded--background-focused .mdc-chip__icon--trailing, .GmChip:hover .mdc-chip__icon--trailing:hover, .GmChip:active .mdc-chip__icon--trailing:hover, .GmChip:not(.mdc-ripple-upgraded):focus .mdc-chip__icon--trailing:hover, .GmChip.mdc-ripple-upgraded--background-focused .mdc-chip__icon--trailing:hover, .GmChip:hover .mdc-chip__icon--trailing:focus, .GmChip:active .mdc-chip__icon--trailing:focus, .GmChip:not(.mdc-ripple-upgraded):focus .mdc-chip__icon--trailing:focus, .GmChip.mdc-ripple-upgraded--background-focused .mdc-chip__icon--trailing:focus {
+    color: var(--gm-chip-ink-color--stateful);
+}
+
+.appsMaterialWizChipAssistivechipHairline {
+    background-color: var(--background-popup-chip);
+    color: var(--gm-chip-ink-color);
+    fill: var(--gm-chip-ink-color);
+    border-color: var(--gm-chip-outline-color);
+}
+
+.boqDrivesharedialogCommonFilechipFileChip .exportLabel {
+    color: var(--gm-chip-ink-color);
+}
+
+.mdc-list-divider {
+    border-color: var(--border-popup-divider);
+}
+
+.boqDrivesharedialogLinkLinkcopyUrlsBoxAnyone {
+    background-color: var(--background-popup-input-good);
+    color: var(--color-popup-input-good);
+}
+
+.boqDrivesharedialogLinkLinkcopyUrlsBoxSpecificPeople {
+    background-color: var(--background-popup-input-warn);
+    color: var(--color-popup-input-warn);
+}
+
+.boqDrivesharedialogCommonTitlebarTitleBar .DisabledSettingsButton {
+    color: #fff;
+}
+
+.boqDrivesharedialogLinkLinkpermissionLinkPermissionRow:hover .boqDrivesharedialogLinkLinkpermissionIcon, .boqDrivesharedialogLinkLinkpermissionLinkPermissionRow:focus-within .boqDrivesharedialogLinkLinkpermissionIcon {
+    background-color: var(--background-popup-circle-icon);
+}
+
+.boqDrivesharedialogLinkLinkpermissionVisibilityMenuTextButton.mdc-button:not(:disabled) {
+    color: var(--color-popup-primary);
+}
+
+.boqDrivesharedialogLinkLinkpermissionLinkPermissionSummary {
+    color: var(--color-popup-secondary);
+}
+
+
+
+
+
+
+
+
+
+
 /* broken drive file picker css since the classes change cuz google is dum */
 
 .Qe-Xf-cb-Od.Qe-Vq-fg,
