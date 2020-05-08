@@ -1825,7 +1825,8 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     --color-popup-input-good: #45c56a;
     --background-popup-input-warn: #353224;
     --color-popup-input-warn: #c5af45;
-    --background-popup-circle-icon: #282828;
+    --background-popup-circle-icon: #333;
+    --background-popup-circle-icon-hover: #282828;
 
     /* overriding default vars */
     --mdc-theme-surface: #282828;
@@ -1977,8 +1978,12 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     color: #fff;
 }
 
-.boqDrivesharedialogLinkLinkpermissionLinkPermissionRow:hover .boqDrivesharedialogLinkLinkpermissionIcon, .boqDrivesharedialogLinkLinkpermissionLinkPermissionRow:focus-within .boqDrivesharedialogLinkLinkpermissionIcon {
+.boqDrivesharedialogLinkLinkpermissionIconAnyone, .boqDrivesharedialogLinkLinkpermissionIconVaries {
     background-color: var(--background-popup-circle-icon);
+}
+
+.boqDrivesharedialogLinkLinkpermissionLinkPermissionRow:hover .boqDrivesharedialogLinkLinkpermissionIcon, .boqDrivesharedialogLinkLinkpermissionLinkPermissionRow:focus-within .boqDrivesharedialogLinkLinkpermissionIcon {
+    background-color: var(--background-popup-circle-icon-hover);
 }
 
 .boqDrivesharedialogLinkLinkpermissionVisibilityMenuTextButton.mdc-button:not(:disabled) {
