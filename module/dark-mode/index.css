@@ -1869,8 +1869,9 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 }
 
 .boqDrivesharedialogCommonScrollcontainerWrapper::before, .boqDrivesharedialogCommonScrollcontainerWrapper::after,
-.boqDrivesharedialogCommonScrollcontainerSeamCoverTop,
-.boqDrivesharedialogCommonScrollcontainerSeamCoverBottom {
+.boqDriveElementsCoreWebScrollcontainerEl::before, .boqDriveElementsCoreWebScrollcontainerEl::after,
+.boqDrivesharedialogCommonScrollcontainerSeamCoverTop, .boqDrivesharedialogCommonScrollcontainerSeamCoverBottom,
+.boqDriveElementsCoreWebScrollcontainerSeamCoverTop, .boqDriveElementsCoreWebScrollcontainerSeamCoverBottom {
     border-color: var(--border-popup-seam);
 }
 
