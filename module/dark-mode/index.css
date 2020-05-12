@@ -1935,8 +1935,10 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     background-color: var(--background-popup-loading-bar);
 }
 
-.boqDrivesharedialogPermissionslistPermissionrowListItem:hover .boqDrivesharedialogPermissionslistPermissionrowPermissionRow, .boqDrivesharedialogPermissionslistPermissionrowListItem:focus-within .boqDrivesharedialogPermissionslistPermissionrowPermissionRow,
-.boqDrivesharedialogLinkLinkpermissionLinkPermissionRow:hover {
+.boqDrivesharedialogPermissionslistPermissionrowListItem:hover .boqDrivesharedialogPermissionslistPermissionrowPermissionRow, 
+.boqDrivesharedialogPermissionslistPermissionrowListItem:focus-within .boqDrivesharedialogPermissionslistPermissionrowPermissionRow,
+.boqDrivesharedialogLinkLinkpermissionLinkPermissionRow:hover,
+.boqDrivesharedialogLinkLinkpermissionLinkPermissionRow:focus-within {
     background-color: var(--background-popup-list-hover);
 }
 
