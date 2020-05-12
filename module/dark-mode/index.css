@@ -281,6 +281,11 @@
     --color-bubble: #ccc;
     --shadow: #000;
     --shadow-light: #0005;
+    --color-dialog-menu-button-caption: #ccc;
+    --background-dialog-button-disabled: #444;
+    --border-dialog-button-disabled: #444;
+    --border-dialog-menu-button: #555;
+    --background-dialog-menu-button-hover: #3a3a3a;
 }
 
 body {
@@ -901,14 +906,17 @@ body {
     color: var(--color-dialog-button);
 }
 
-.docs-gm .modal-dialog button:focus, .docs-gm .modal-dialog .jfk-button-standard.jfk-button-focused,
-.docs-gm .modal-dialog button:hover:focus, .docs-gm .modal-dialog .jfk-button-standard.jfk-button-hover.jfk-button-focused,
-.docs-gm .modal-dialog button:hover, .docs-gm .modal-dialog .jfk-button-standard.jfk-button-hover {
+.docs-gm .modal-dialog button:not([disabled]):not(.goog-buttonset-action):focus, .docs-gm .modal-dialog .jfk-button-standard.jfk-button-focused,
+.docs-gm .modal-dialog button:not([disabled]):not(.goog-buttonset-action):hover:focus, .docs-gm .modal-dialog .jfk-button-standard.jfk-button-hover.jfk-button-focused,
+.docs-gm .modal-dialog button:not([disabled]):not(.goog-buttonset-action):hover, .docs-gm .modal-dialog .jfk-button-standard.jfk-button-hover {
     background: var(--background-dialog-button-hover);
     border-color: var(--border-dialog-button-hover) !important;
 }
 
-.docs-gm .modal-dialog button:active, .docs-gm .modal-dialog button:focus:active, .docs-gm .modal-dialog .jfk-button-standard.jfk-button-active, .docs-gm .modal-dialog .jfk-button-standard.jfk-button-focus.jfk-button-active {
+.docs-gm .modal-dialog button:not([disabled]):not(.goog-buttonset-action):active, 
+.docs-gm .modal-dialog button:not([disabled]):not(.goog-buttonset-action):focus:active, 
+.docs-gm .modal-dialog .jfk-button-standard.jfk-button-active, 
+.docs-gm .modal-dialog .jfk-button-standard.jfk-button-focus.jfk-button-active {
     background: var(--background-dialog-button-focus);
     border-color: currentColor !important;
 }
@@ -2033,6 +2041,57 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 .docs-gm .kix-autocorrect-bubble-undo:hover,
 .docs-gm .kix-autocorrect-bubble-feedback:hover {
     background-color: var(--background-bubble-option-hover);
+}
+
+
+
+/* Borders & Shading (and probably other dialogs that share this stuff) */
+
+.docs-gm .modal-dialog .goog-flat-menu-button-caption, .docs-gm .sketchy-shape-effects-shadow-tile .goog-flat-menu-button-caption {
+    color: var(--color-dialog-menu-button-caption);
+}
+
+.docs-gm .modal-dialog .goog-flat-menu-button-dropdown, .docs-gm .sketchy-shape-effects-shadow-tile .goog-flat-menu-button-dropdown {
+    filter: brightness(1.6);
+}
+
+.docs-gm .modal-dialog button[disabled], .docs-gm .modal-dialog .jfk-button-standard.jfk-button-disabled {
+    background-color: transparent;
+    border-color: var(--border-dialog-button-disabled) !important;
+    color: inherit;
+}
+
+.docs-gm .modal-dialog .goog-flat-menu-button, .docs-gm .sketchy-shape-effects-shadow-tile .goog-flat-menu-button {
+    border-color: var(--border-dialog-menu-button);
+}
+
+.docs-gm .modal-dialog .docs-flatcolormenubutton .goog-flat-menu-button-caption, .docs-gm .sketchy-shape-effects-shadow-tile .docs-flatcolormenubutton .goog-flat-menu-button-caption {
+    border-color: var(--border-dialog-menu-button);
+}
+
+.docs-gm .modal-dialog .goog-flat-menu-button-hover, .docs-gm .sketchy-shape-effects-shadow-tile .goog-flat-menu-button-hover,
+.docs-gm .modal-dialog .goog-flat-menu-button-focused, .docs-gm .sketchy-shape-effects-shadow-tile .goog-flat-menu-button-focused,
+.docs-gm .modal-dialog .goog-flat-menu-button-focused.goog-flat-menu-button-open, .docs-gm .sketchy-shape-effects-shadow-tile .goog-flat-menu-button-focused.goog-flat-menu-button-open,
+.docs-gm .modal-dialog .goog-flat-menu-button:active, .docs-gm .sketchy-shape-effects-shadow-tile .goog-flat-menu-button:active {
+    background-color: var(--background-dialog-menu-button-hover);
+    border-color: var(--border-dialog-menu-button);
+}
+
+.goog-menuitem[aria-label^="Line dash:"] > .goog-menuitem-content > div > div,
+#kix-bordersshadingdialog-borderdash > [aria-label^="Line dash:"] > div > div {
+    border-color: var(--color-text) !important;
+}
+
+.docs-gm #kix-bordersshadingdialog-borderposition .jfk-button {
+    background-color: var(--background-dialog-button);
+    border-color: var(--border-dialog-button) !important;
+}
+
+.docs-gm #kix-bordersshadingdialog-borderposition .jfk-button.jfk-button-hover,
+.docs-gm #kix-bordersshadingdialog-borderposition .jfk-button.jfk-button-focused,
+.docs-gm #kix-bordersshadingdialog-borderposition .jfk-button.jfk-button-hover.jfk-button-focused {
+    background-color: var(--background-dialog-button-hover);
+    border-color: currentColor !important;
 }
 
 
