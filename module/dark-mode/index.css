@@ -275,6 +275,12 @@
     --background-slide-switch-knob: #666;
     --background-slide-switch-checked: #124890;
     --background-slide-switch-border-checked: #1553a6;
+    --background-bubble: #333;
+    --border-bubble: #3a3a3a;
+    --background-bubble-option-hover: #4a4a4a;
+    --color-bubble: #ccc;
+    --shadow: #000;
+    --shadow-light: #0005;
 }
 
 body {
@@ -1797,6 +1803,11 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     border-color: var(--border-document-comment-thread-divider);
 }
 
+.docs-bubble {
+    background-color: var(--background-bubble);
+    border-color: var(--border-bubble);
+}
+
 
 /* New share */
 
@@ -1804,7 +1815,6 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     --background-popup: #222;
     --background-popup-input: #111;
     --background-popup-input-hover: #181818;
-    --shadow: #000;
     --border-popup-seam: var(--background-popup);
     --color-popup-title: #ccc;
     --color-popup: #999;
@@ -1997,6 +2007,33 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 
 
 
+/* Autocorrect dotted line & options bubble */
+:root {
+    --background-error-corrected-hover: #333;
+    --border-bubble-autocorrect: var(--border-bubble);
+}
+
+.kix-autocorrect-underline {
+    background-color: var(--background-document);
+}
+
+.kix-autocorrect-hover-interceptor:hover + .kix-autocorrect-hover-overlay {
+    background-color: var(--background-error-corrected-hover);
+}
+
+.docs-gm .kix-autocorrect-bubble {
+    border-color: var(--border-bubble-autocorrect);
+    box-shadow: 0px 1px 3px 1px var(--shadow-light);
+}
+
+.kix-autocorrect-bubble .kix-autocorrect-bubble-undo {
+    color: var(--color-bubble);
+}
+
+.docs-gm .kix-autocorrect-bubble-undo:hover,
+.docs-gm .kix-autocorrect-bubble-feedback:hover {
+    background-color: var(--background-bubble-option-hover);
+}
 
 
 
