@@ -286,6 +286,11 @@
     --border-dialog-button-disabled: #444;
     --border-dialog-menu-button: #555;
     --background-dialog-menu-button-hover: #3a3a3a;
+    --background-sidebar: #272727;
+    --border-sidebar-divider: #444;
+    --border-sidebar-divider-important: #4a4a4a;
+    --color-sidebar: #bbb;
+    --color-sidebar-header: #ddd;
 }
 
 body {
@@ -2097,6 +2102,96 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     border-color: currentColor !important;
 }
 
+
+
+
+/* REVISIONS VIEW */
+
+:root {
+    --background-revisions-hover: #333;
+    --background-revisions-selected: #273446;
+    --background-revisions-selected-hover: #2b3a4e;
+    --color-revisions-name: #aaa;
+    --color-revisions-collaborator: #888;
+    --color-revisions-name-selected: #4596ff;
+    --color-revisions-date-group-heading: #777;
+    --border-revisions-selected: #335480;
+    --border-revisions-selected-hover: #3c659c;
+    --color-revisions-current-label: #999;
+}
+
+.docs-gm .docs-revisions-sidebar {
+    background-color: var(--background-sidebar);
+    box-shadow: var(--shadow) -3px 0px 6px -3px, var(--shadow) 3px 0px 6px -3px;
+}
+
+.docs-gm .docs-revisions-sidebar-date-group {
+    background-color: var(--background-sidebar);
+    border-color: var(--border-sidebar-divider);
+    color: var(--color-revisions-date-group-heading);
+}
+
+.docs-gm .docs-revisions-sidebar-header {
+    background-color: var(--background-sidebar);
+    color: var(--color-sidebar-header);
+}
+
+.docs-revisions-tile-selected {
+    background-color: var(--background-revisions-selected);
+    box-shadow: 0 -1px 0 var(--border-revisions-selected);
+}
+
+/* .docs-revisions-tile-selected.docs-revisions-tile-hover {
+    background-color: var(--background-revisions-selected-hover);
+    --border-revisions-selected: var(--border-revisions-selected-hover);
+} */
+
+.docs-revisions-tile-selected > .docs-revisions-tile-content-wrapper {
+    border-color: var(--border-revisions-selected);
+}
+
+.docs-gm .docs-revisions-sidebar-name-filter-switch-container {
+    border-color: var(--border-sidebar-divider);
+    border-color: transparent;
+}
+
+.docs-revisions-tile-content-wrapper {
+    border-color: var(--border-sidebar-divider);
+    border-color: transparent;
+}
+
+.docs-revisions-icon-img::before {
+    filter: invert() brightness(0.7);
+}
+
+.docs-revisions-tile-text-box:disabled {
+    color: var(--color-revisions-name);
+}
+
+.docs-gm .docs-revisions-tile-collaborator-name {
+    color: var(--color-revisions-collaborator);
+}
+
+.docs-gm .docs-revisions-tile-descriptor, .docs-gm .docs-revisions-tile-text-box ~ .docs-revisions-tile-descriptor {
+    color: var(--color-revisions-current-label);
+}
+
+.docs-gm .docs-revisions-tile-selected .docs-revisions-tile-text-box,
+.docs-gm .docs-revisions-tile-selected .docs-revisions-tile-descriptor, .docs-gm .docs-revisions-tile-selected .docs-revisions-tile-text-box ~ .docs-revisions-tile-descriptor {
+    color: var(--color-revisions-name-selected);
+}
+
+.docs-gm .docs-revisions-sidebar-name-filter-switch-container label {
+    color: var(--color-sidebar);
+}
+
+.docs-revisions-tile-hover:not(.docs-revisions-tile-selected) {
+    background-color: var(--background-revisions-hover);
+}
+
+.docs-revisions-sidebar-actions {
+    border-color: var(--border-sidebar-divider-important);
+}
 
 
 
