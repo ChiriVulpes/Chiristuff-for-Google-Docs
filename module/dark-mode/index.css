@@ -319,16 +319,20 @@ body {
     background: var(--background-header-circle-button);
 }
 
-#docs-docos-commentsbutton:hover {
-    filter: brightness(1.2);
-}
-
 .docs-gm .docs-material .docs-icon-img:not(.docs-icon-document):not(.docs-icon-indent-bottom):not(.docs-icon-ruler-first-indent-drag-blue500) {
     filter: brightness(1.8);
 }
 
 .docs-gm .docs-material .goog-toolbar-button-active .docs-icon-img, .docs-gm .docs-material .goog-toolbar-button-checked .docs-icon-img, .docs-gm .docs-material .goog-toolbar-button-selected .docs-icon-img, .docs-gm .docs-material .goog-toolbar-combo-button-open .docs-icon-img, .docs-gm .docs-material .goog-toolbar-menu-button-open .docs-icon-img, .docs-gm .docs-material .docs-toolbar-split-create-button.goog-toolbar-button-active .docs-icon-img, .docs-gm .docs-material .docs-toolbar-split-create-button.goog-toolbar-menu-button-active .docs-icon-img, .docs-gm .docs-material .docs-toolbar-split-create-button.goog-toolbar-menu-button-open .docs-icon-img, .docs-gm .docs-material .docs-appbar-circle-button.jfk-button-active .docs-icon-img, .docs-gm .docs-material .docs-appbar-circle-button.jfk-button-checked .docs-icon-img, .docs-gm .docs-material .docs-analytics-sidebar-tab-selected .docs-icon-img, .docs-gm .docs-material.docs-sheet-active-tab .docs-icon-img, .docs-gm .docs-material .docs-sheet-button-active .docs-icon-img, .docs-gm .docs-material .docs-sheet-button-open .docs-icon-img, .docs-gm .docs-material .punch-start-presentation-container .docs-icon-img, .docs-gm .docs-material .waffle-named-ranges-promo-title .docs-icon-img, .docs-gm .docs-material.trix-palette .goog-palette-cell-selected .docs-icon-img, .docs-bubble .docs-bubble-button.jfk-button:hover:active .docs-icon-img, .docs-save-indicator:active .docs-icon-img, .docs-save-indicator.docs-save-indicator-selected .docs-icon-img, .docs-material .docs-save-indicator-popup-icon .docs-icon-img {
     filter: brightness(1.4) saturate(0.8);
+}
+
+#docs-docos-commentsbutton:hover {
+    filter: brightness(1.2);
+}
+
+#docs-docos-commentsbutton.jfk-button-active .docs-icon-img {
+    filter: grayscale() brightness(1.8);
 }
 
 .docs-gm .docs-menubar .goog-control {
