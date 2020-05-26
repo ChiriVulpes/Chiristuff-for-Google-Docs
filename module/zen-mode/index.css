@@ -262,3 +262,35 @@
 .zen-mode-no-comments .kix-selection-overlay[style*="background-color: "]:not([style*="background-color: rgb(0, 0, 0)"]) {
     display: none;
 }
+
+#docs-docos-commentsbutton {
+    position: relative;
+}
+
+#docs-docos-commentsbutton::before,
+#docs-docos-commentsbutton::after {
+    content: var(--content-no-comments-slash);
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    background: currentColor;
+    transform: rotate(-40deg);
+    margin-top: -1.5px;
+    margin-left: -1px;
+    z-index: 1;
+}
+
+#docs-docos-commentsbutton::before {
+    width: 34px;
+    height: 5px;
+    background: var(--background-header);
+}
+
+#docs-docos-commentsbutton::after {
+    filter: brightness(var(--filter-brightness-no-comments-slash));
+}
+
+.zen-mode-no-comments #docs-docos-commentsbutton {
+    --content-no-comments-slash: "";
+}
