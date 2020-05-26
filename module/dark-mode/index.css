@@ -1850,6 +1850,8 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     --color-popup-input-warn: #c5af45;
     --background-popup-circle-icon: #333;
     --background-popup-circle-icon-hover: #282828;
+    --color-popup-circle-icon-good: var(--color-popup-input-good);
+    --color-popup-circle-icon-warn: var(--color-popup-input-warn);
 
     /* overriding default vars */
     --mdc-theme-surface: #282828;
@@ -1867,10 +1869,6 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 .GmCard {
     background-color: var(--background-popup);
     box-shadow: 0 1px 2px 0 var(--shadow), 0 1px 3px 1px var(--shadow);
-}
-
-.boqDrivePeopleWebMultiselectPeoplePicker {
-    background-color: var(--background-popup-input);
 }
 
 .boqDrivesharedialogCommonScrollcontainerWrapper::before, .boqDrivesharedialogCommonScrollcontainerWrapper::after,
@@ -1906,10 +1904,6 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 
 .mdc-icon-button::before {
     background-color: #fff;
-}
-
-.boqDrivePeopleWebMultiselectPeoplePicker:hover {
-    background-color: var(--background-popup-input-hover);
 }
 
 :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item::before, :not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item::after {
@@ -2018,6 +2012,28 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 
 .boqDrivesharedialogLinkLinkpermissionLinkPermissionSummary {
     color: var(--color-popup-secondary);
+}
+
+.boqDriveElementsCoreWebFormfield_filledFieldContainer,
+.boqDriveElementsCoreWebFormfield_filledFieldContainer:hover {
+    background: var(--background-popup);
+}
+
+.boqDrivePeopleWebPersonchipChip {
+    background: var(--background-popup-chip);
+}
+
+.boqDrivesharedialogCommonTitlebarTitleBar .boqDrivesharedialogCommonTitlebarIconContainer.Collapsed {
+    background-color: var(--background-popup-circle-icon);
+}
+
+.boqDrivesharedialogLinkLinkpermissionIconAnyone, .boqDrivesharedialogLinkLinkpermissionIconVaries {
+    color: var(--color-popup-circle-icon-good);
+}
+
+.boqDrivesharedialogLinkLinkpermissionIconSpecificPeople {
+    background-color: var(--background-popup-circle-icon);
+    color: var(--color-popup-circle-icon-warn);
 }
 
 
