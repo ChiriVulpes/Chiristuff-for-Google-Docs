@@ -291,6 +291,7 @@
     --border-sidebar-divider-important: #4a4a4a;
     --color-sidebar: #bbb;
     --color-sidebar-header: #ddd;
+    --background-header-circle-button: #fff1;
 }
 
 body {
@@ -308,6 +309,18 @@ body {
 .docs-material .goog-toolbar-combo-button, 
 .docs-material .goog-toolbar-menu-button {
     background: var(--background-header);
+}
+
+.docs-material #docs-docos-commentsbutton.jfk-button.jfk-button-hover, .docs-material #docs-docos-commentsbutton:focus {
+    background-color: var(--background-header-circle-button);
+}
+
+.onegoogle-material-minibar [aria-label^="Google Account"]:hover {
+    background: var(--background-header-circle-button);
+}
+
+#docs-docos-commentsbutton:hover {
+    filter: brightness(1.2);
 }
 
 .docs-gm .docs-material .docs-icon-img:not(.docs-icon-document):not(.docs-icon-indent-bottom):not(.docs-icon-ruler-first-indent-drag-blue500) {
