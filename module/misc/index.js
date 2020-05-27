@@ -37,7 +37,22 @@ setInterval(() => {
 		const wordCount = documentBody && documentBody.textContent.split(/\s+/g).filter(v => v && /\w/.test(v)).length;
 		wordCountWrapper.innerHTML = `~<span class="kix-documentmetrics-widget-number">${wordCount}</span> words`;
 	}
+	
+	
+	// catch keydowns on the dictionary sidebar
+	const dictSidebar = document.querySelector(".docs-dictionary-sidebar");
+	if (dictSidebar) 
+		dictSidebar.addEventListener("keydown", onDictionaryKeydown);
 }, 500);
+
+
+// Event handler for dictionary sidebar keydown
+async function onDictionaryKeydown(event) {
+	// close the dictionary sidebar on escape press
+	if (event.code === "Escape")
+		simulateClick(document.querySelector(".docs-dictionary-titlebar-close-icon"));
+}
+
 
 // Event handler for keydowns
 async function onKeydown(event) {
