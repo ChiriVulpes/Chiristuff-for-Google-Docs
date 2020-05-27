@@ -124,11 +124,16 @@
     --background-dialog-input: #222;
     --border-dialog-input: #444;
     --color-dialog-input: #bbb;
+	
     --background-dialog-button: var(--background-dialog);
-    --border-dialog-button: #666;
-    --color-dialog-button: #549eff;
     --background-dialog-button-hover: #323f4f;
-    --border-dialog-button-hover: currentColor;
+    --color-dialog-button: #549eff;
+    --border-dialog-button: #438bea;
+    --color-dialog-button-hover: #72afff;
+    --border-dialog-button-hover: #549eff;
+    --background-dialog-button-action-disabled: #666;
+    --color-dialog-button-action-disabled: #111;
+	
     --color-dialog-link: #549eff;
     --background-dialog-close-button-hover: #444;
     --border-dialog-divider: #444;
@@ -919,6 +924,9 @@ body {
 .docs-gm .modal-dialog .jfk-textinput,
 .docs-gm .modal-dialog .docs-findinput-container {
     background: var(--background-dialog-input);
+}
+
+.docs-gm .modal-dialog .docs-findinput-container:not(.docs-findinput-container-focus):not(:focus) {
     border-color: var(--border-dialog-input);
 }
 
@@ -933,6 +941,7 @@ body {
 .docs-gm .modal-dialog button:not([disabled]):not(.goog-buttonset-action):hover, .docs-gm .modal-dialog .jfk-button-standard.jfk-button-hover {
     background: var(--background-dialog-button-hover);
     border-color: var(--border-dialog-button-hover) !important;
+    color: var(--color-dialog-button-hover);
 }
 
 .docs-gm .modal-dialog button:not([disabled]):not(.goog-buttonset-action):active, 
@@ -941,6 +950,11 @@ body {
 .docs-gm .modal-dialog .jfk-button-standard.jfk-button-focus.jfk-button-active {
     background: var(--background-dialog-button-focus);
     border-color: currentColor !important;
+}
+
+.docs-gm .modal-dialog .goog-buttonset-action[disabled], .docs-gm .modal-dialog .jfk-button-action.jfk-button-disabled, .docs-gm .docs-material-bubble .jfk-button-action.jfk-button-disabled {
+    background: var(--background-dialog-button-action-disabled);
+    color: var(--color-dialog-button-action-disabled);
 }
 
 .modal-dialog a {
