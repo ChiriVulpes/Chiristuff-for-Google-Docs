@@ -17,3 +17,5 @@
 		- Like normal, opens the link creation tooltip.
 		- When text is not selected, acts as normal.
 		- When text is selected, and the URL input is currently blank, inserts that text into the URL input.
+	- `Escape` (when Dictionary sidebar is open & focus is within)
+		- Closes sidebar
