@@ -297,6 +297,7 @@
     --color-sidebar: #bbb;
     --color-sidebar-header: #ddd;
     --background-header-circle-button: #fff1;
+    --background-sidebar-circle-icon-hover: #444;
 }
 
 body {
@@ -1414,6 +1415,27 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     background: var(--border-dictionary-entry-focus);
     pointer-events: none;
 }
+
+.docs-sidebar-gm-titlebar-icon-button:hover {
+    background-color: var(--background-sidebar-circle-icon-hover);
+}
+
+.docs-sidebar-gm-titlebar-icon-button:hover .docs-icon-img {
+    filter: brightness(2.5) !important;
+}
+
+.docs-gm .docs-dictionary-titlebar-back-icon.jfk-button-hover {
+    background-color: var(--background-sidebar-circle-icon-hover);
+}
+
+.docs-gm .docs-dictionary-titlebar-back-icon path:last-child {
+    fill: #abb2bb !important;
+}
+
+.docs-gm .docs-dictionary-titlebar-back-icon.jfk-button-hover path:last-child {
+    fill: #edf7ff !important;
+}
+
 
 .jfk-activityIndicator-circle[style*="background-color: rgb(255, 255, 255)"] {
     background-color: var(--background-header) !important;
