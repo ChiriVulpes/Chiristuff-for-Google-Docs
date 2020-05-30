@@ -30,6 +30,11 @@ const branch = "master";
 			.then(r => r.ok ? (file.endsWith(".json") ? r.json() : r.text()) : undefined);
 	}
 	
+	if (modules === "all")
+		modules = await fetch(`https://api.github.com/repos/Yuudaari/Chiristuff-for-Google-Docs/contents/module?ref=${branch}`)
+			.then(response => response.json())
+			.then(modules => modules.map(({name}) => name));
+	
 	modules = modules
 		.map(async module => ({
 			name: module,
@@ -39,55 +44,59 @@ const branch = "master";
 
 	modules = await Promise.all(modules);
 
-
-
-	///////////////////////////////////////////////////////
-	// CSS
-	// applied in iframes as well
 	
 	const css = modules
 		.filter(({css}) => css)
-    	.map(({name, css}) => `/* ${name} */\n\n${css}`)
-        .join("\n\n\n");
+		.map(({name, css}) => `/* ${name} */\n\n${css}`)
+		.join("\n\n\n");
 	
-    const iframeURLs = await getFile("iframes.json");
-    setInterval(() => {
-    
-        const documents = [document];
-        const iframes = document.querySelectorAll(iframeURLs
-        	.flatMap(url => [url, `https://docs.google.com${url}`])
-        	.map(url => `iframe[src^="${url}"]`)
-        	.join(","))
-        	.forEach(iframe => {
-                const frameDocument = iframe && iframe.contentDocument;
-                const body = frameDocument && frameDocument.body;
-                if (!body) return;
-                documents.push(frameDocument);
-        	});
+	const iframeURLs = await getFile("iframes.json");
+	setInterval(() => {
+	
+		const documents = [document];
+		const iframes = document.querySelectorAll(iframeURLs
+			.flatMap(url => [url, `https://docs.google.com${url}`])
+			.map(url => `iframe[src^="${url}"]`)
+			.join(","))
+			.forEach(iframe => {
+				const frameDocument = iframe && iframe.contentDocument;
+				const body = frameDocument && frameDocument.body;
+				if (!body) return;
+				documents.push(frameDocument);
+			});
 
-        for (const doc of documents) {
-        	doc.documentElement.setAttribute("current-url", doc.URL);
-            const stylesheet = doc.getElementById("chiristuff") || doc.createElement("style");
-            stylesheet.id = "chiristuff";
-            stylesheet.textContent = css;
-            if (!stylesheet.parentElement || doc.querySelector("#chiristuff ~ style, #chiristuff ~ link")) {
-                doc.body.appendChild(stylesheet);
-            }
-        }
-        
-        document.documentElement.classList.add("show-everything");
-        
-    }, 100);
-    
-    
-    
-    ////////////////////////////////////////////////////////
-    // JS
-    
-    for (const {name, js} of modules.filter(({js}) => js)) {
-	    const script = document.createElement("script");
-	    script.textContent = `/* ${name} */\n\n${js}`;
-	    document.head.appendChild(script);
-    }
+		
+		for (const doc of documents) {
+			doc.documentElement.setAttribute("current-url", doc.URL);
+			
+			
+			///////////////////////////////////////////////////////
+			// CSS
+
+			const stylesheet = doc.getElementById("chiristuff") || doc.createElement("style");
+			stylesheet.id = "chiristuff";
+			stylesheet.textContent = css;
+			if (!stylesheet.parentElement || doc.querySelector("#chiristuff ~ style, #chiristuff ~ link")) {
+				doc.body.appendChild(stylesheet);
+			}
+		
+
+			////////////////////////////////////////////////////////
+			// JS
+
+			for (const {name, js} of modules.filter(({js}) => js)) {
+				if (doc.querySelector(`script[name="${name}"]`))
+					continue;
+
+				const script = document.createElement("script");
+				script.setAttribute("name", name);
+				script.textContent = `/* ${name} */\n\n${js}`;
+				doc.head.appendChild(script);
+			}
+		}
+		
+		document.documentElement.classList.add("show-everything");
+		
+	}, 100);
 	
 })();
