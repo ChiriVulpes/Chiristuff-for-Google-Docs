@@ -2268,6 +2268,9 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     --color-picker-header: #fff;
     --border-picker-inner: #333;
     --background-picker-item-hover: #2a2a2a;
+    --color-button-action-disabled: #333;
+    --background-button-action: #357ae8;
+    --background-button-action-hover: #4d90fe;
 }
 
 #picker .picker-header {
@@ -2279,7 +2282,9 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     background: var(--background-picker);
 }
 
-#picker [role="button"][aria-label] {
+#picker .picker-header [role="button"][aria-label], /* header icon buttons */
+#picker .picker-file > * > :last-child > [role="button"][aria-label] > :first-child /* hovered file/folder arrow */
+{
     filter: invert();
 }
 
@@ -2292,7 +2297,46 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     border-bottom-color: var(--border-picker);
 }
 
-#picker .picker-contents > [role="menu"] > * > [role="menuitem"]:hover {
+#picker .picker-file:not(.focused-menuitem):not([aria-disabled="true"]):hover > * {
     background: var(--background-picker-item-hover);
 }
 
+#picker .picker-button {
+    background: transparent;
+    border-color: #fff;
+    box-shadow: none;
+    filter: brightness(0.5) sepia() saturate(3) hue-rotate(188deg) saturate(var(--saturation)) brightness(var(--brightness));
+    --saturation: 2;
+    --brightness: 1;
+    cursor: pointer;
+    transition: none;
+}
+
+#picker .picker-button > *:empty {
+    filter: invert();
+    opacity: 1;
+}
+
+#picker .picker-button:hover {
+    background: #8883;
+    --saturation: 1.7;
+    --brightness: 1.2;
+}
+
+#picker .picker-button-default {
+    background: var(--background-button-action);
+    border-color: transparent;
+    transition: none;
+    cursor: pointer;
+}
+
+#picker .picker-button-default:hover {
+    background: var(--background-button-action-hover);
+}
+
+#picker .picker-button-default[aria-disabled="true"] {
+    opacity: 1;
+    background: var(--background-dialog-button-action-disabled);
+    color: var(--color-button-action-disabled);
+    cursor: default;
+}
