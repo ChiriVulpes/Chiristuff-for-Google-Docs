@@ -2288,6 +2288,34 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     filter: invert();
 }
 
+#picker .picker-header [role="button"][aria-label] > * {
+    position: relative;
+}
+
+/* prevent the close button from cutting out the circle background */
+#picker .picker-header > :last-child {
+    overflow: visible;
+}
+
+#picker .picker-header [role="button"][aria-label]:hover {
+    filter: invert() brightness(3);
+}
+
+#picker .picker-header [role="button"][aria-label]:hover > *::before {
+    content: "";
+    display: block;
+    position: absolute;
+    --radius: 18px;
+    --diameter: calc(var(--radius) * 2);
+    top: calc(50% - var(--radius));
+    left: calc(50% - var(--radius));
+    width: var(--diameter);
+    height: var(--diameter);
+    border-radius: var(--radius);
+    background: #fff3;
+    z-index: -100;
+}
+
 #picker .picker-header [role="heading"] {
     color: var(--color-picker-header);
 }
@@ -2297,7 +2325,7 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     border-bottom-color: var(--border-picker);
 }
 
-#picker .picker-file:not(.focused-menuitem):not([aria-disabled="true"]):hover > * {
+#picker .picker-file:not(.picker-focused-file):not([aria-disabled="true"]):hover > * {
     background: var(--background-picker-item-hover);
 }
 
@@ -2340,3 +2368,5 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     color: var(--color-button-action-disabled);
     cursor: default;
 }
+
+
