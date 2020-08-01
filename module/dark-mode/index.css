@@ -406,7 +406,11 @@ body {
     background-color: var(--background-document) !important;
 }
 
-.kix-paginateddocumentplugin-compact-mode {
+/* .kix-paginateddocumentplugin-compact-mode {
+    box-shadow: var(--box-shadow-document) 0px 0px 0px 0.75pt, var(--box-shadow-document) 0px 0px 3pt 0.75pt;
+} */
+
+.kix-page-compact, .kix-page-compact-first {
     box-shadow: var(--box-shadow-document) 0px 0px 0px 0.75pt, var(--box-shadow-document) 0px 0px 3pt 0.75pt;
 }
 
@@ -549,6 +553,10 @@ body {
 
 .goog-menuitem-disabled .goog-menuitem-accel, .goog-menuitem-disabled .goog-menuitem-content {
     color: var(--color-menu-item-keybind-disabled) !important;
+}
+
+.apps-hoverable-menu-separator-container .apps-hoverable-menu-separator-bottom {
+    border-color: var(--border-menu-divider);
 }
 
 .docs-gm .goog-menuseparator {
