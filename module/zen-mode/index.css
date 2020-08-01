@@ -44,7 +44,9 @@
     box-shadow: none;
 }
 
-.zen-mode .kix-paginateddocumentplugin-compact-mode {
+.zen-mode .kix-paginateddocumentplugin-compact-mode,
+.zen-mode .kix-page-compact,
+.zen-mode .kix-page-compact-first {
     box-shadow: none;
 }
 
