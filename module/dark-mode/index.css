@@ -406,11 +406,7 @@ body {
     background-color: var(--background-document) !important;
 }
 
-/* .kix-paginateddocumentplugin-compact-mode {
-    box-shadow: var(--box-shadow-document) 0px 0px 0px 0.75pt, var(--box-shadow-document) 0px 0px 3pt 0.75pt;
-} */
-
-.kix-page-compact, .kix-page-compact-first {
+.kix-paginateddocumentplugin-compact-mode, .kix-page-compact, .kix-page-compact-first {
     box-shadow: var(--box-shadow-document) 0px 0px 0px 0.75pt, var(--box-shadow-document) 0px 0px 3pt 0.75pt;
 }
 
