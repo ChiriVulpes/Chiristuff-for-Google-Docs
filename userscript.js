@@ -1,7 +1,7 @@
 let modules = [
 
 	// comma-separated list of Chiristuff modules you want to opt into.
-	// for a full list, see https://github.com/Yuudaari/Chiristuff-for-Google-Docs/tree/master/module
+	// for a full list, see https://github.com/ChiriCuddles/Chiristuff-for-Google-Docs/tree/master/module
 	// if you click on one of the modules on that page, it'll show a description of what it does
 	
 	"dark-mode",
@@ -25,13 +25,13 @@ const branch = "master";
 (async function () {
 	
 	async function getFile(file) {
-		const baseurl = `https://raw.githubusercontent.com/Yuudaari/Chiristuff-for-Google-Docs/${branch}`;
+		const baseurl = `https://raw.githubusercontent.com/ChiriCuddles/Chiristuff-for-Google-Docs/${branch}`;
 		return fetch(`${baseurl}/${file}`)
 			.then(r => r.ok ? (file.endsWith(".json") ? r.json() : r.text()) : undefined);
 	}
 	
 	if (modules === "all")
-		modules = await fetch(`https://api.github.com/repos/Yuudaari/Chiristuff-for-Google-Docs/contents/module?ref=${branch}`)
+		modules = await fetch(`https://api.github.com/repos/ChiriCuddles/Chiristuff-for-Google-Docs/contents/module?ref=${branch}`)
 			.then(response => response.json())
 			.then(modules => modules.map(({name}) => name));
 	
