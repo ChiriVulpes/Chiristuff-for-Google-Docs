@@ -38,9 +38,9 @@
 }
 
 .kix-paragraphrenderer {
-    padding-top: 6px;
+    padding-top: 6px !important;
     margin-top: -6px;
-    padding-bottom: 6px;
+    padding-bottom: 6px !important;
     margin-bottom: -6px;
     overflow: hidden;
     padding-left: 6px;
