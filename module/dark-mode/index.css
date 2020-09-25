@@ -421,6 +421,10 @@ body {
     color: var(--color-text) !important;
 }
 
+.kix-lineview-background > div[style*="background-color: rgb(255, 255, 255)"] {
+    background-color: var(--background-document) !important;
+}
+
 .docs-navigation-tab-button,
 .docs-navigation-tab-button:not(.outline-refresh) {
     background: var(--background-outline-button);
