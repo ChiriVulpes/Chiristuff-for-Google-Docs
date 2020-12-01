@@ -51,6 +51,13 @@ setInterval(() => {
 	var driveMainPage = document.getElementById("drive_main_page");
 	var driveBackground = driveMainPage.children[1];
 	driveBackground?.classList.add("drive-background");
+
 	var driveHeader = driveBackground?.querySelector(":scope > :first-child > * > * > *");
 	driveHeader?.classList.add("drive-header");
+	
+	driveMainPage.querySelectorAll("[data-target='sidebar'] > * > [data-label='SINGLE'] > * > * > *")
+		.forEach(sidebarPanel => {
+			sidebarPanel.classList.add("drive-sidebar-panel");
+			sidebarPanel.lastElementChild.firstElementChild.classList.add("drive-sidebar-panel-body");
+		});
 }, 50);
