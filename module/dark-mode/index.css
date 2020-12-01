@@ -2403,3 +2403,35 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 [aria-label="Search in Drive"]::placeholder {
     color: var(--color-search-placeholder) !important;
 }
+
+.drive-sidebar-panel,
+.drive-sidebar-panel-body {
+    background: var(--background-sidebar);
+    border-color: var(--border-sidebar-divider);
+}
+
+
+.drive-sidebar-panel [role='heading'] {
+    background: var(--background-sidebar);
+    border-color: var(--border-sidebar-divider-important);
+    color: var(--color-sidebar-header);
+}
+
+.drive-sidebar-panel [role='listitem'] {
+    background: var(--background-sidebar);
+    border-color: var(--border-sidebar-divider);
+}
+
+.drive-sidebar-panel [aria-hidden="true"][style="top: 0px;"] > * {
+    background: var(--background-sidebar);
+    border-color: var(--border-sidebar-divider-important);
+    color: var(--color-sidebar-header);
+}
+
+.drive-sidebar-panel [role="tablist"] {
+    border-color: var(--border-sidebar-divider);
+}
+
+.drive-sidebar-panel [role="tablist"] > [role="tab"]:not([aria-selected="true"]) {
+    color: var(--color-sidebar);
+}
