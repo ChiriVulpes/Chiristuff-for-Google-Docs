@@ -6,6 +6,7 @@
 /* Add a big margin after the last page */
 .kix-paginateddocumentplugin {
     margin-bottom: calc(50vh - 100pt);
+    position: relative;
 }
 
 /* Hide pointless garbage */
