@@ -123,7 +123,8 @@
     --color-dialog-title: #ccc;
     --background-dialog-input: #222;
     --border-dialog-input: #444;
-    --color-dialog-input: #bbb;
+    --color-dialog-input: #bbb;{
+    --color-dialog-input-placeholder: #666;
 	
     --background-dialog-button: var(--background-dialog);
     --background-dialog-button-hover: #323f4f;
@@ -1260,9 +1261,16 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 }
 
 .docs-gm .docs-link-insertlinkbubble-text, .docs-gm .docs-link-urlinput-url-container {
-    border-color: var(--border-document-link-tooltip);
     background: var(--background-document-link-tooltip);
-    color: var(--color-document-link-tooltip);
+    color: var(--color-document-link-tooltip) !important;
+}
+
+.docs-gm .docs-link-insertlinkbubble-text:not(:focus), .docs-gm .docs-link-urlinput-url-container:not(:focus) {
+    border-color: var(--border-document-link-tooltip) !important;
+}
+
+.docs-gm .docs-link-urlinput-url::placeholder {
+    color: var(--color-dialog-input-placeholder);
 }
 
 .docs-gm .docs-link-insertlinkbubble-url-label, .docs-gm .docs-link-insertlinkbubble-text-label {
@@ -1878,6 +1886,10 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 .docs-bubble {
     background-color: var(--background-bubble);
     border-color: var(--border-bubble);
+}
+
+.goog-toolbar[role="toolbar"] .docs-font-size-inc-dec-action-button.goog-toolbar-button, #fontSizeSelect.docs-font-size-inc-dec-combobox {
+    border-color: var(--border-toolbar-button-divider) !important;
 }
 
 
