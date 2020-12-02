@@ -123,7 +123,7 @@
     --color-dialog-title: #ccc;
     --background-dialog-input: #222;
     --border-dialog-input: #444;
-    --color-dialog-input: #bbb;{
+    --color-dialog-input: #bbb;
     --color-dialog-input-placeholder: #666;
 	
     --background-dialog-button: var(--background-dialog);
