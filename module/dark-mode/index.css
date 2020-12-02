@@ -2112,17 +2112,17 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     background-color: var(--background-error-corrected-hover);
 }
 
-.docs-gm .kix-autocorrect-bubble {
+.docs-gm .docs-autocorrect-bubble {
     border-color: var(--border-bubble-autocorrect);
     box-shadow: 0px 1px 3px 1px var(--shadow-light);
 }
 
-.kix-autocorrect-bubble .kix-autocorrect-bubble-undo {
+.docs-autocorrect-bubble .docs-autocorrect-bubble-undo {
     color: var(--color-bubble);
 }
 
-.docs-gm .kix-autocorrect-bubble-undo:hover,
-.docs-gm .kix-autocorrect-bubble-feedback:hover {
+.docs-gm .docs-autocorrect-bubble-undo:hover,
+.docs-gm .docs-autocorrect-bubble-feedback:hover {
     background-color: var(--background-bubble-option-hover);
 }
 
