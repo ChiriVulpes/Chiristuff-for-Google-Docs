@@ -293,6 +293,11 @@
     --color-sidebar-header: #ddd;
     --background-header-circle-button: #fff1;
     --background-sidebar-circle-icon-hover: #444;
+    --background-instant-bubble: #222;
+    --background-instant-bubble-hover: #2a2a2a;
+    --border-instant-bubble: #3a3a3a;
+    --box-shadow-instant-bubble: #0005;
+    --background-instant-button-hover: #373737;
 }
 
 body {
@@ -1890,6 +1895,20 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 
 .goog-toolbar[role="toolbar"] .docs-font-size-inc-dec-action-button.goog-toolbar-button, #fontSizeSelect.docs-font-size-inc-dec-combobox {
     border-color: var(--border-toolbar-button-divider) !important;
+}
+
+#docs-instant-bubble {
+    background: var(--background-instant-bubble);
+    border-color: var(--border-instant-bubble);
+    box-shadow: var(--box-shadow-instant-bubble) 0px 3px 3px;
+}
+
+#docs-instant-bubble:hover {
+    background: var(--background-instant-bubble-hover);
+}
+
+.instant-button:hover {
+    background: var(--background-instant-button-hover);
 }
 
 
