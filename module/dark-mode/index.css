@@ -2511,6 +2511,10 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     border-color: var(--border-document) !important;
 }
 
+#drive_main_page [aria-selected="true"] [role="gridcell"] {
+    border-color: var(--border-document-selected) !important;
+}
+
 #drive_main_page [role="gridcell"] > * > :last-child {
     color: var(--color-document-title);
 }
