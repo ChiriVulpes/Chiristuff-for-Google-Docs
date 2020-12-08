@@ -2417,6 +2417,15 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 
 /* Google Drive */
 /* requires classes applied by JS */
+:root {
+    --color-breadcrumb-folder: #999;
+    --color-breadcrumb-current-folder: #ccc;
+    --fill-header-icon: #aaa;
+    --background-breadcrumb-folder-hover: #222;
+    --background-breadcrumb-current-folder-context-menu-shown: #333;
+    --fill-folder-grey: #aaa;
+}
+
 .drive-background, 
 .drive-header,
 .drive-header header {
@@ -2465,4 +2474,61 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 
 .drive-sidebar-panel [role="tablist"] > [role="tab"]:not([aria-selected="true"]) {
     color: var(--color-sidebar);
+}
+
+.drive-header > :last-child > :last-child > * [role="link"] {
+    color: var(--color-breadcrumb-folder);
+}
+
+.drive-header > :last-child > :last-child > * [role="button"] {
+    color: var(--color-breadcrumb-current-folder);
+}
+
+.drive-header > :last-child > :last-child > * [role="link"]:hover,
+.drive-header > :last-child > :last-child > * [role="button"]:hover {
+    background: var(--background-breadcrumb-folder-hover);
+}
+
+.drive-header > :last-child > :last-child > * [role="button"][aria-expanded="true"] {
+    background: var(--background-breadcrumb-current-folder-context-menu-shown);
+    color: var(--color-button-blue);
+}
+
+.drive-header svg {
+    fill: var(--fill-header-icon);
+}
+
+.drive-header nav [guidedhelpid="folder_path_button"] [role="button"] svg {
+    fill: currentColor !important;
+}
+
+.drive-header > :last-child > :last-child {
+    border-color: var(--border-header);
+}
+
+#drive_main_page [role="gridcell"] {
+    background: var(--background-document) !important;
+    border-color: var(--border-document) !important;
+}
+
+#drive_main_page [role="gridcell"] > * > :last-child {
+    color: var(--color-document-title);
+}
+
+#drive_main_page [fill="#5f6368"] {
+    fill: var(--fill-folder-grey);
+}
+
+#drive_main_page [role="gridcell"]:not([aria-label$="Video"]):not([aria-label$="Image"]):not([aria-label$="Photoshop"]) [src^="https://lh3.google.com"] {
+    filter: invert() hue-rotate(180deg) brightness(1.2) contrast(0.76);
+}
+
+#drive_main_page [role="gridcell"] > * > * > * > :first-child {
+    background: var(--background-document);
+}
+
+#drive_main_page [aria-label$="Image"] > * > * > * > :last-child,
+#drive_main_page [aria-label$="Photoshop"] > * > * > * > :last-child {
+    background-color: var(--background-document);
+    background-image: linear-gradient(45deg,#000 25%,transparent 25%,transparent 75%,#000 75%,#000),linear-gradient(45deg,#000 25%,transparent 25%,transparent 75%,#000 75%,#000);
 }
