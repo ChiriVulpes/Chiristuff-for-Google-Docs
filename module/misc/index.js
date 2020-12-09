@@ -324,3 +324,20 @@ var defaultOptions = {
 	bubbles: true,
 	cancelable: true
 }
+
+
+/* Google Drive */
+if (location.href.startsWith("https://drive.google.com/drive")) {
+	document.addEventListener("keydown", async event => {
+		if (event.key === "F2") {
+			const selected = document.querySelectorAll('[aria-selected="true"] > [role="gridcell"]');
+			if (selected.length !== 1)
+				return;
+
+			document.activeElement.dispatchEvent(new MouseEvent("contextmenu", { bubbles: true }));
+			const rename = document.body.querySelector(":scope > [role='menu'] [aria-label='Rename']");
+			rename.dispatchEvent(new MouseEvent("mousedown", { bubbles: true }));
+			rename.dispatchEvent(new MouseEvent("mouseup", { bubbles: true }));
+		}
+	});
+}
