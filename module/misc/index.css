@@ -1,5 +1,5 @@
 /* Hide the line separating the pages in compact mode */
-.kix-page-compact::before {
+.kix-page-compact::before, .kix-page-canvas-compact-mode {
     border-top: none;
 }
 
