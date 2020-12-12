@@ -251,6 +251,10 @@
     display: none;
 }
 
+.zen-mode .kix-page-paginated {
+	box-shadow: none;
+}
+
 .zen-mode-no-comments .kix-commentoverlayrenderer-normal, .zen-mode-no-comments .kix-commentoverlayrenderer-highlighted {
     display: none;
 }
