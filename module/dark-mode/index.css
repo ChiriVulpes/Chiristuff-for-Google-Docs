@@ -416,7 +416,7 @@ body {
     box-shadow: var(--box-shadow-document) 0px 4px 3px 1px !important;
 }
 
-.kix-page-compact::before {
+.kix-page-compact::before, .kix-page-canvas-compact-mode {
     border-color: var(--border-page-divider);
 }
 
