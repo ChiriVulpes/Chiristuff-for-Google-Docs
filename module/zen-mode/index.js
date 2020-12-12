@@ -29,8 +29,10 @@ setInterval(() => {
 	document.documentElement.classList.toggle("has-vertical-ruler",
 		verticalRuler && verticalRuler.style.display !== "none");
 
-	document.documentElement.style.setProperty("--document-width",
-		`${document.querySelector(".kix-paginateddocumentplugin").getBoundingClientRect().width}px`);
+	const documentPlugin = document.querySelector(".kix-paginateddocumentplugin, .kix-canvas-tile-content");
+	if (documentPlugin)
+		document.documentElement.style.setProperty("--document-width", 
+			`${documentPlugin.getBoundingClientRect().width}px`);
 
 	// custom keyboard shortcuts
 	const editingIFrame = document.querySelector("iframe.docs-texteventtarget-iframe");
