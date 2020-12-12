@@ -1920,7 +1920,7 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 }
 
 .kix-page-paginated {
-    box-shadow: 0 1px 3px 1px var(--box-shadow-document);
+    box-shadow: 0 4px 3px 1px var(--box-shadow-document);
 }
 
 
