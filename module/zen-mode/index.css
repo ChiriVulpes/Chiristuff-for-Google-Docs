@@ -74,7 +74,7 @@
     height: 100vh !important;
 }
 
-.zen-mode .kix-page-compact::before {
+.zen-mode .kix-page-compact::before, .zen-mode .kix-page-canvas-compact-mode {
     border-top: none;
 }
 
