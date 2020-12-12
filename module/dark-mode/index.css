@@ -1745,7 +1745,7 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 }
 
 .docs-homescreen-grid-item-thumbnail {
-    filter: invert() hue-rotate(180deg) brightness(1.2) contrast(0.76);
+    filter: invert() hue-rotate(180deg) brightness(1.2) contrast(0.73);
 }
 
 .docs-homescreen-grid-item {
@@ -1912,7 +1912,7 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 }
 
 .kix-canvas-tile-content {
-    filter: invert() hue-rotate(180deg) brightness(1.2) contrast(0.76);
+    filter: invert() hue-rotate(180deg) brightness(1.2) contrast(0.73);
 }
 
 .kix-appview-editor {
@@ -2536,7 +2536,7 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 }
 
 #drive_main_page [role="gridcell"]:not([aria-label$="Video"]):not([aria-label$="Image"]):not([aria-label$="Photoshop"]) [src^="https://lh3.google.com"] {
-    filter: invert() hue-rotate(180deg) brightness(1.2) contrast(0.76);
+    filter: invert() hue-rotate(180deg) brightness(1.2) contrast(0.73);
 }
 
 #drive_main_page [role="gridcell"] > * > * > * > :first-child {
