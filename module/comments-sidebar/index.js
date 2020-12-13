@@ -74,6 +74,7 @@ function recenterDocument() {
 	}
 
 	const appSwitcherButton = document.querySelector(".companion-collapser-button-container .app-switcher-button");
+	if (!appSwitcherButton) return;
 	simulateClick(appSwitcherButton);
 	simulateClick(appSwitcherButton);
 	simulateEvent(appSwitcherButton, "blur");
@@ -87,12 +88,16 @@ window.addEventListener("resize", recenterDocument);
 // Event simulation utilities
 
 function simulateClick(element) {
+	if (!element) return;
+	
 	simulateEvent(element, "mousedown");
 	simulateEvent(element, "mouseup");
 	simulateEvent(element, "mouseup");
 }
 
 function simulateEvent(element, eventName) {
+	if (!element) return;
+	
 	var options = extend(defaultOptions, arguments[2] || {});
 	var oEvent, eventType = null;
 
