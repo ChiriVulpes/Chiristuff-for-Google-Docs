@@ -218,6 +218,8 @@
     --background-diff-1: #00fff114;
     --color-diff-1: #00a28f;
     --background-diff-2: #00ffff21;
+    --background-diff-3: #4e04ff38;
+    --color-diff-3: #8859f9;
     --background-add-comment-bubble: #373737;
     --background-add-comment-bubble-hover: #555;
     --background-collab: #444;
@@ -1494,6 +1496,16 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 
 .kix-highlighted-revision-diff-overlay[style*="background-color: rgb(239, 248, 248)"] {
     background-color: var(--background-diff-2) !important;
+}
+
+
+.kix-highlighted-revision-diff-overlay[style*="background-color: rgb(237, 231, 246)"], 
+.kix-selected-revision-diff-overlay[style*="background-color: rgb(237, 231, 246)"] {
+    background-color: var(--background-diff-3) !important;
+}
+
+.kix-wordhtmlgenerator-word-node[style*="color:#512da8"] {
+    color: var(--color-diff-3) !important;
 }
 
 #docs-instant-button-bubble {
