@@ -176,3 +176,9 @@
         left: 0 !important;
     }
 }
+
+
+/* WIDE COMMENTS */
+:root.wide-comments .docos-anchoreddocoview.docos-docoview-tesla-conflict {
+    width: 610px;
+}
