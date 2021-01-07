@@ -237,7 +237,14 @@ setInterval(() => {
 		.forEach(nav => nav.addEventListener("contextmenu", onNavItemContextMenu, false));
 	document.querySelectorAll(".navigation-widget-hat")
 		.forEach(header => header.addEventListener("contextmenu", onNavHeaderContextMenu, false));
+	document.querySelectorAll(".docos-docoview-tesla-conflict")
+		.forEach(conflict => conflict.addEventListener("contextmenu", onConflictContextMenu, false));
 }, 500);
+
+function onConflictContextMenu(event) {
+	document.documentElement.classList.toggle("wide-comments");
+	event.preventDefault();
+}
 
 
 
