@@ -604,8 +604,15 @@ body {
 
 .docs-gm .docos-anchoreddocoview,
 .docos-anchoreddocoview .docos-replyview-first.docos-anchoredreplyview,
-.docs-gm .docos-anchoredreplyview, .docs-gm .docos-showrepliesbutton, .docs-gm .docos-anchoreddocoview-input-pane {
+.docs-gm .docos-anchoredreplyview, 
+.docs-gm .docos-showrepliesbutton,
+.docs-gm .docos-anchoreddocoview-show-replies-on-border .docos-showrepliesbutton-collapsed-internal, 
+.docs-gm .docos-anchoreddocoview-input-pane {
     background: var(--background-document-comment-thread);
+}
+
+.docos-showrepliesbutton-collapsed {
+    color: var(--color-text-link);
 }
 
 .docs-gm .docos-anchoreddocoview {
@@ -620,7 +627,7 @@ body {
 }
 
 .docs-gm .docos-anchoredreplyview, 
-.docs-gm .docos-showrepliesbutton, 
+.docos-anchoreddocoview-show-replies-on-border .docos-showrepliesbutton-line, 
 .docs-gm .docos-anchoreddocoview-input-pane {
     border-color: var(--border-document-comment-thread-divider);
 }
