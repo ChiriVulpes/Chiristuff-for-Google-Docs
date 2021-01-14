@@ -71,7 +71,7 @@ async function onKeydown(event) {
 	if (event.code === "Minus" && event.ctrlKey && event.shiftKey) {
 		simulateEvent(document.getElementById("docs-insert-menu"), "mousedown");
 		simulateClick(document.querySelector("[aria-label='Horizontal line r']")
-			.closest(".goog-menuitem"));
+			?.closest(".goog-menuitem"));
 		event.preventDefault();
 		return false;
 	}
@@ -87,7 +87,7 @@ async function onKeydown(event) {
 
 		simulateEvent(document.getElementById("docs-edit-menu"), "mousedown");
 		const copyButton = document.querySelector("[aria-label='Copy c']")
-			.closest(".goog-menuitem");
+			?.closest(".goog-menuitem");
 		simulateClick(copyButton);
 		findInput.focus();
 
@@ -125,8 +125,8 @@ function toggleEditSuggestMode(event) {
 	setTimeout(() => {
 		const suggesting = !document.querySelector("#docs-toolbar-mode-switcher .docs-icon-mode-edit");
 		simulateEvent(document.getElementById("docs-toolbar-mode-switcher"), "mousedown");
-		simulateClick(document.querySelector(`.docs-toolbar-mode-switcher-menu .${suggesting ? "docs-icon-mode-edit" : "docs-icon-acl-comment-only"}`)
-			.closest(".goog-menuitem"));
+		simulateClick(document.querySelector(`.docs-toolbar-mode-switcher-menu .${suggesting ? "docs-toolbar-mode-switcher-editing-menu-item" : "docs-toolbar-mode-switcher-commenting-menu-item"}`)
+			?.closest(".goog-menuitem"));
 	}, 1);
 	if (event) event.preventDefault();
 	return false;
@@ -272,6 +272,9 @@ async function sleep(ms = 0) {
 // Event simulation utilities
 
 function simulateClick(element) {
+	if (!element)
+		return;
+
 	simulateEvent(element, "mousedown");
 	simulateEvent(element, "mouseup");
 	simulateEvent(element, "mouseup");
