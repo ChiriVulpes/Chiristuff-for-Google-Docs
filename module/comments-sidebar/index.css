@@ -4,13 +4,13 @@
     max-width: 35vw;
     position: fixed;
     top: 0;
-    right: 0;
+    right: 0 !important;
     border-top: none;
     border-bottom: none;
 }
 
 .docos-enable-docs-header .docos-stream-view {
-    max-height: none;
+    max-height: none !important;
     height: calc(100% - 51px);
     position: relative;
 	padding: unset;
@@ -21,6 +21,11 @@
     position: absolute;
     width: 100%;
     height: 100%;
+}
+
+
+.docs-docos-activitybox-round-corners, .docs-gm .docos-streampane-header {
+	border-radius: 0;
 }
 
 .docs-docos-activitybox-inner {
@@ -228,4 +233,8 @@
 
 .docs-gm .docos-streamdocoview-inputcontainer {
 	display: block !important;
+}
+
+.docs-gm .docos-streampane-container .streampane-dragger {
+    display: none !important;
 }
