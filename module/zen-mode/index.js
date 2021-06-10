@@ -1,5 +1,5 @@
 document.getElementById("docs-branding-container")
-	.addEventListener("contextmenu", toggleZenMode);
+	?.addEventListener("contextmenu", toggleZenMode);
 
 function toggleZenMode(e) {
 	document.documentElement.classList.toggle("zen-mode");
