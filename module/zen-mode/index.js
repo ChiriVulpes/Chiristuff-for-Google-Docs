@@ -19,7 +19,7 @@ setInterval(() => {
 	
 	const editorWrapper = document.querySelector(".kix-appview-editor");
 	document.documentElement.classList.toggle("has-horizontal-scrollbar",
-		editorWrapper.scrollWidth > editorWrapper.clientWidth);
+		editorWrapper && editorWrapper.scrollWidth > editorWrapper.clientWidth);
 
 	const horizontalRuler = document.getElementById("kix-horizontal-ruler");
 	document.documentElement.classList.toggle("has-horizontal-ruler",
