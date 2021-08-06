@@ -1980,6 +1980,10 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     color: var(--color-button-green);
 }
 
+.kix-checklist-item {
+    fill: var(--color-text);
+}
+
 
 
 /* New share */
