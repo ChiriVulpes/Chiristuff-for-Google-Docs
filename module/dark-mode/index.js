@@ -46,6 +46,9 @@ setInterval(() => {
 				pickerhtml.firstElementChild?.lastElementChild?.classList.add("picker-min-arrow-border");
 			}
 		});
+	
+	document.querySelectorAll(".kix-canvas-tile-content rect[fill='rgba(34,34,34,1)']")
+		.forEach(rect => rect.closest(".kix-canvas-tile-content").classList.add("inherent-dark-bg"));
 			
 	/* Google Drive classes */
 	var driveMainPage = document.getElementById("drive_main_page");
