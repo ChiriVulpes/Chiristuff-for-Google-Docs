@@ -1932,7 +1932,7 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
 }
 
 .kix-canvas-tile-content {
-    filter: invert() hue-rotate(180deg) brightness(1.2) contrast(0.73);
+    filter: invert() hue-rotate(180deg) blur(0.4px) contrast(0.73);
 }
 
 .kix-appview-editor {
