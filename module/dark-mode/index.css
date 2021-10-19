@@ -1931,8 +1931,9 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     background: var(--background-instant-button-hover);
 }
 
-:not(.inherent-dark-bg) > :not(.inherent-dark-bg) + .kix-canvas-tile-content:not(.inherent-dark-bg),
-:not(.inherent-dark-bg) > .kix-canvas-tile-content:not(.inherent-dark-bg):first-child {
+:not(.inherent-dark-bg) + :not(.inherent-dark-bg) > :not(.inherent-dark-bg) + .kix-canvas-tile-content:not(.inherent-dark-bg),
+:not(.inherent-dark-bg):first-child > :not(.inherent-dark-bg) + .kix-canvas-tile-content:not(.inherent-dark-bg),
+:not(.inherent-dark-bg) + :not(.inherent-dark-bg) > .kix-canvas-tile-content:not(.inherent-dark-bg):first-child {
     filter: invert() hue-rotate(180deg) blur(0.4px) contrast(0.73);
 }
 
