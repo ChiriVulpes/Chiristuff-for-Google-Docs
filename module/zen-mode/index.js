@@ -42,7 +42,7 @@ setInterval(() => {
 	
 	document.querySelectorAll(".kix-cursor > .kix-cursor-caret")
 		.forEach(cursor => cursor.parentElement
-			 .classList.toggle("others-cursor", !cursor.matches("[style*='border-color: rgb(0, 0, 0)']")));
+			 .classList.toggle("others-cursor", !cursor.matches("[style*='border-color: rgb(170, 170, 170)']")));
 }, 500);
 
 window.addEventListener("mousemove", event => {
