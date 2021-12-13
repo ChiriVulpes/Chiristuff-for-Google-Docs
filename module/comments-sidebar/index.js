@@ -5,16 +5,18 @@ let ignoreNextCommentsVisibilityChange = true;
 setInterval(() => {
 	const conflicts = document.querySelectorAll(".docs-gm .docos-streamdocoview .docos-action-text.docos-body-action-text");
 	for (const conflict of conflicts) {
-		const conflictAuthor = conflict.closest(".docos-streamdocoview").querySelector(".docos-docoview-rootreply .docos-author").textContent;
-		const conflictResolver = conflict.parentElement.querySelector(".docos-author").textContent;
-		if (conflictResolver === conflictAuthor) {
+		const conflictAuthor = conflict.closest(".docos-streamdocoview")
+			?.querySelector(".docos-docoview-rootreply .docos-author")
+			?.textContent;
+		const conflictResolver = conflict.parentElement.querySelector(".docos-author")
+			?.textContent;
+		if (conflictResolver === conflictAuthor)
 			conflict.closest(".docos-streamdocoview").classList.add("resolved-by-self");
-		}
 
 		const match = conflict.textContent.match(/Suggestion (accepted|rejected)|Marked as resolved/);
 		if (match) {
-			conflict.closest(".docos-streamreplyview").classList.add("resolution-message");
-			conflict.closest(".docos-streamdocoview").classList.add("really-truly-resolved", match[1]);
+			conflict.closest(".docos-streamreplyview")?.classList.add("resolution-message");
+			conflict.closest(".docos-streamdocoview")?.classList.add("really-truly-resolved", match[1]);
 		}
 	}
 
@@ -23,13 +25,13 @@ setInterval(() => {
 	document.querySelectorAll(".docs-gm .resolution-message").forEach(element => element.classList.add("hidden-unused"));
 	document.querySelectorAll('.docs-gm .docos-docoview-comment[title^="Reply to"]').forEach(element => {
 		const replyWrapper = element.parentElement;
-		const actionsWrapper = replyWrapper.parentElement;
-		replyWrapper.classList.add("hidden-unused");
+		const actionsWrapper = replyWrapper?.parentElement;
+		replyWrapper?.classList.add("hidden-unused");
 	});
 
 	// on opening comments
 	const commentsButton = document.getElementById("docs-docos-commentsbutton");
-	const commentsButtonWrapper = commentsButton && commentsButton.parentElement;
+	const commentsButtonWrapper = commentsButton?.parentElement;
 	if (commentsButtonWrapper && !commentsButtonWrapper.classList.contains("added-event-listener")) {
 		commentsButtonWrapper.classList.add("added-event-listener");
 		commentsButtonWrapper.addEventListener("click", () => {
@@ -60,8 +62,8 @@ setInterval(() => {
 		lockedVisible = true;
 		comments.classList.add("locked-visible");
 		const commentsButton = document.getElementById("docs-docos-commentsbutton");
-		const commentsButtonWrapper = commentsButton && commentsButton.parentElement;
-		commentsButtonWrapper.classList.add("locked-visible");
+		const commentsButtonWrapper = commentsButton?.parentElement;
+		commentsButtonWrapper?.classList.add("locked-visible");
 
 		recenterDocument();
 	}
