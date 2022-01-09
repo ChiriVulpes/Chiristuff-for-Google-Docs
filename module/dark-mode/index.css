@@ -1931,6 +1931,10 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     background: var(--background-instant-button-hover);
 }
 
+.kix-canvas-tile-content {
+    filter: grayscale() brightness(0.9) contrast(2) contrast(0.75) brightness(1.1);
+}
+
 :not(.inherent-dark-bg) + :not(.inherent-dark-bg) > :not(.inherent-dark-bg) + .kix-canvas-tile-content:not(.inherent-dark-bg),
 :not(.inherent-dark-bg):first-child > :not(.inherent-dark-bg) + .kix-canvas-tile-content:not(.inherent-dark-bg),
 :not(.inherent-dark-bg) + :not(.inherent-dark-bg) > .kix-canvas-tile-content:not(.inherent-dark-bg):first-child {
