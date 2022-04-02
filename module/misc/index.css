@@ -9,19 +9,6 @@
     position: relative;
 }
 
-/* Hide pointless garbage */
-.docs-explore-widget {
-	display: none;
-}
-
-.app-switcher-button {
-	visibility: hidden;
-}
-
-.docs-companion-app-switcher-container {
-	visibility: hidden;
-}
-
 /* Fix sidebars being covered by the document and not being aligned to the right side */
 .docs-dictionary-sidebar,
 .docs-explore-sidebar,
