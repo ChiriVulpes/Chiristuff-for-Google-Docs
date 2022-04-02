@@ -302,3 +302,7 @@
 .zen-mode-no-comments #docs-docos-commentsbutton {
     --content-no-comments-slash: "";
 }
+
+.docs-companion-app-switcher-container {
+    height: calc(100vh - 64px) !important;
+}
