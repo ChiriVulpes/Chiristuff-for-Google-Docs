@@ -48,7 +48,8 @@
 .zen-mode .kix-page-compact,
 .zen-mode .kix-page-compact-first,
 .zen-mode .kix-page-compact-box-shadow, 
-.zen-mode .kix-paginateddocumentplugin-compact-mode-box-shadow {
+.zen-mode .kix-paginateddocumentplugin-compact-mode-box-shadow,
+.zen-mode .kix-page-paginated .kix-stacked-tile-page-shadow {
     box-shadow: none !important;
 }
 
