@@ -1935,10 +1935,15 @@ a > .kix-wordhtmlgenerator-word-node[style*="color:#1155cc"] {
     filter: grayscale() brightness(0.9) contrast(2) contrast(0.75) brightness(1.1);
 }*/
 
-:not(.inherent-dark-bg) + :not(.inherent-dark-bg) > :not(.inherent-dark-bg) + .kix-canvas-tile-content:not(.inherent-dark-bg),
-:not(.inherent-dark-bg):first-child > :not(.inherent-dark-bg) + .kix-canvas-tile-content:not(.inherent-dark-bg),
-:not(.inherent-dark-bg) + :not(.inherent-dark-bg) > .kix-canvas-tile-content:not(.inherent-dark-bg):first-child {
+:not(.inherent-dark-bg) + .kix-page-paginated:not(.inherent-dark-bg) > :not(.inherent-dark-bg) + .kix-canvas-tile-content:not(.inherent-dark-bg),
+.kix-page-paginated:not(.inherent-dark-bg):first-child > :not(.inherent-dark-bg) + .kix-canvas-tile-content:not(.inherent-dark-bg),
+:not(.inherent-dark-bg) + .kix-page-paginated:not(.inherent-dark-bg) > .kix-canvas-tile-content:not(.inherent-dark-bg):first-child {
     filter: invert() hue-rotate(180deg) blur(0.4px) contrast(0.73);
+}
+
+.left-sidebar-container.pageless-format {
+    background: transparent;
+    box-shadow: none;
 }
 
 .kix-appview-editor {
