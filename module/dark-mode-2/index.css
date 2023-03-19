@@ -22,6 +22,8 @@
     --color-docs-menu-bar-control: #888;
     --color-docs-menu-bar-control-hover: #bbb;
     --background-docs-menu-bar-control-hover: #323538;
+    --background-matte: #222;
+    --color-docs-word-count: #aaa;
 }
 
 .docs-grille-gm3.docs-body-pageless #docs-chrome, .docs-grille-gm3.docs-body-pageless #docs-chrome .docs-titlebar-buttons {
@@ -82,4 +84,8 @@
 .docs-grille .docs-menubar .goog-control-hover, .docs-grille .docs-menubar .goog-control-open {
     background: var(--background-docs-menu-bar-control-hover);
     color: var(--color-docs-menu-bar-control-hover);
+}
+
+.docs-material-gm-select-caption {
+    color: var(--color-docs-word-count);
 }
