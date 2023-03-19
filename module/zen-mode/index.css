@@ -92,7 +92,7 @@
     box-shadow: none;
     border: none;
     bottom: 0px;
-    width: 100%;
+    width: 100% !important;
     pointer-events: none;
     height: 80px;
     margin: 0;
