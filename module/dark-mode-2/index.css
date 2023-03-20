@@ -89,3 +89,99 @@
 .docs-material-gm-select-caption {
     color: var(--color-docs-word-count);
 }
+
+/* comments */
+:root {
+    --background-docs-comment: #282828;
+    --color-docs-comment-op: #ccc;
+    --color-docs-comment-timestamp: #888;
+    --color-docs-comment-text: #aaa;
+    --color-docs-comment-text-secondary: #888;
+    --background-docs-comment-hover: #2b2b2b;
+    --background-docs-comment-open: #2e2e2e;
+    --background-docs-comment-input: #222;
+    --border-docs-comment-input: #333;
+    --color-docs-comment-input: #aaa;
+    --color-docs-comment-input-placeholder: #666;
+    --background-docs-button-action-disabled: #555;
+    --color-docs-button-action-disabled: #aaa;
+    --background-docs-button-standard: #2e2e2e;
+    --border-docs-button-standard: #555;
+    --color-docs-button-standard: #4089fd;
+    --border-docs-button-standard-hover: #44659a;
+    --color-docs-button-standard-hover: #82b2ff;
+    --background-docs-button-standard-hover: #498fff30;
+    --color-docs-comment-reply: #aaa;
+    --border-docs-comment-separator: #444;
+}
+
+.docs-grille-gm3 .kix-appview-editor, body.docs-grille-gm3 {
+    background-image: none !important;
+}
+
+.docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview, .docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview .docos-anchoredreplyview, .docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview-input-pane {
+    background: var(--background-docs-comment);
+}
+
+.docs-grille-gm3 .docos-anchoredreplyview-header .docos-anchoredreplyview-author {
+    color: var(--color-docs-comment-op);
+}
+
+.docs-grille-gm3 .docos-anchoredreplyview .docos-action-text, .docs-grille-gm3 .docos-anchoredreplyview-header .docos-anchoredreplyview-timestamp, .docs-grille-gm3 .docos-streamdocoview .docos-action-text, .docs-grille-gm3.docs-gm .docos-xeditor .docos-streamdocoview-timestamp {
+    color: var(--color-docs-comment-timestamp);
+}
+
+.docs-grille-gm3 .docos-anchoredreplyview .docos-anchoredreplyview-body div, .docs-grille-gm3 .docos-streamdocoview-body .docos-replyview-body div {
+    color: var(--color-docs-comment-text-secondary) !important;
+}
+
+.docs-grille-gm3 .docos-anchoredreplyview .docos-anchoredreplyview-body span, .docs-grille-gm3 .docos-streamdocoview-body .docos-replyview-body span {
+    color: var(--color-docs-comment-text) !important;
+}
+
+.docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview:hover, .docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview:hover .docos-anchoreddocoview-input-pane, .docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview:hover .docos-anchoredreplyview {
+    background: var(--background-docs-comment-hover);
+}
+
+.docs-grille-gm3.docs-gm .docos-anchoreddocoview.docos-docoview-active, .docs-grille-gm3.docs-gm .docos-anchoreddocoview.docos-docoview-active:hover, .docs-grille-gm3.docs-gm .docos-docoview-active .docos-anchoreddocoview-input-pane, .docs-grille-gm3.docs-gm .docos-docoview-active .docos-anchoredreplyview, .docs-grille-gm3.docs-gm .docos-docoview-active:hover .docos-anchoreddocoview-input-pane, .docs-grille-gm3.docs-gm .docos-docoview-active:hover .docos-anchoredreplyview {
+    background: var(--background-docs-comment-open);
+}
+
+.docs-grille-gm3 .docos-input .docos-input-textarea, .docs-grille-gm3 .docos-input .docos-input-textarea:focus, .docs-grille-gm3 .docos-streamdocoview-input-pane .docos-input-textarea, .docs-grille-gm3 .docos-streamdocoview-input-pane.docos-input .docos-input-textarea:focus {
+    background: var(--background-docs-comment-input);
+    color: var(--color-docs-comment-input);
+    border-color: var(--border-docs-comment-input);
+}
+
+.docs-grille-gm3 .docos-input-contenteditable:empty:before {
+    color: var(--color-docs-comment-input-placeholder);
+}
+
+.docs-grille-gm3 .docos.docs-gm .jfk-button.jfk-button-action.jfk-button-disabled {
+    background: var(--background-docs-button-action-disabled);
+    color: var(--color-docs-button-action-disabled);
+}
+
+.docs-grille-gm3 .docos.docs-gm .jfk-button.jfk-button-standard {
+    background: var(--background-docs-button-standard);
+    color: var(--color-docs-button-standard);
+    border-color: var(--border-docs-button-standard) !important;
+}
+
+.docs-grille-gm3 .docos.docs-gm .jfk-button.jfk-button-standard.jfk-button-hover {
+    color: var(--color-docs-button-standard-hover);
+    border-color: var(--border-docs-button-standard-hover) !important;
+    background: var(--background-docs-button-standard-hover);
+}
+
+.docs-grille-gm3 .docos-anchoredreplyview .docos-anchoredreplyview-body {
+    color: var(--color-docs-comment-reply);
+}
+
+.docs-grille-gm3 .docos-anchoreddocoview .docos-anchoredreplyview, .docs-grille-gm3 .docos-anchoreddocoview-input-pane {
+    border-color: var(--border-docs-comment-separator);
+}
+
+.docs-grille-gm3 .docs-suggestion-button:not(.jfk-button-disabled) .docs-material .docs-icon-img, .docs-grille-gm3 .docs-suggestion-button:not(.jfk-button-disabled) .docs-material .docs-icon-img:before {
+    filter: brightness(1.5) grayscale(0.4);
+}
