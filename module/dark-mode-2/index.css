@@ -185,3 +185,35 @@
 .docs-grille-gm3 .docs-suggestion-button:not(.jfk-button-disabled) .docs-material .docs-icon-img, .docs-grille-gm3 .docs-suggestion-button:not(.jfk-button-disabled) .docs-material .docs-icon-img:before {
     filter: brightness(1.5) grayscale(0.4);
 }
+
+:root {
+    --background-scrollbar: #555;
+    --background-scrollbar-hover: #777;
+    --background-scrollbar-active: #666;
+}
+
+.docs-gm ::-webkit-scrollbar-thumb {
+    background-color: var(--background-scrollbar);
+}
+
+[current-url^="https://docs.google.com/document/u/"] ::-webkit-scrollbar, 
+[current-url^="https://docs.google.com/document/u/"] ::-webkit-scrollbar-track, 
+[current-url^="https://docs.google.com/document/u/"] ::-webkit-scrollbar-corner, 
+[current-url^="https://docs.google.com/document/u/"] ::-webkit-scrollbar-track-piece {
+    background: var(--background-docs-chrome) !important;
+}
+
+[current-url^="https://docs.google.com/document/u/"] ::-webkit-scrollbar-thumb {
+    border-color: var(--background-docs-chrome);
+    background: var(--background-scrollbar);
+}
+
+[current-url^="https://docs.google.com/document/u/"] ::-webkit-scrollbar-thumb:hover {
+	background: var(--background-scrollbar-hover);
+	box-shadow: none;
+}
+
+[current-url^="https://docs.google.com/document/u/"] ::-webkit-scrollbar-thumb:active {
+	background: var(--background-scrollbar-active);
+	box-shadow: none;
+}
