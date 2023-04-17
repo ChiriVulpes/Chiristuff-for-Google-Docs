@@ -177,6 +177,10 @@
     margin-left: -14px;
 }
 
+.zen-mode.has-vertical-ruler .docs-grille-gm3 .docs-vertical-ruler-active-indicator {
+    display: none;
+}
+
 .zen-mode:not(.has-horizontal-scrollbar) .left-sidebar-container {
     transition: height 0s linear .1s;
 }
