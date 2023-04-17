@@ -1,7 +1,5 @@
 # Chiristuff-for-Google-Docs
 
-A WIP extension for Google Docs that I'm too lazy to actually make an extension for.
-
 ## Using
 1. Get a userscript & userstyle extension. 
 	- On Chrome, I use [User JavaScript and CSS](https://chrome.google.com/webstore/detail/user-javascript-and-css/nbhcbdghjpllgmfilhnhkllmkecfmpld).
