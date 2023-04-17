@@ -24,15 +24,21 @@
     --background-docs-menu-bar-control-hover: #323538;
     --background-matte: #222;
     --color-docs-word-count: #aaa;
+    --background-docs-word-count: #282828;
 }
 
-.docs-grille-gm3.docs-body-pageless #docs-chrome, .docs-grille-gm3.docs-body-pageless #docs-chrome .docs-titlebar-buttons {
+.docs-grille-gm3.docs-body-pageless #docs-chrome,
+.docs-grille-gm3 #docs-chrome:not(.docs-hub-chrome), 
+.docs-grille-gm3.docs-body-pageless #docs-chrome .docs-titlebar-buttons,
+.docs-grille #docs-header:not(.docs-hub-appbar) .docs-titlebar-buttons{
     background: var(--background-docs-chrome);
     border-color: var(--border-docs-chrome);'
 }
 
 
-.docs-grille-gm3.docs-body-pageless #docs-align-palette, .docs-grille-gm3.docs-body-pageless #docs-align-palette .goog-toolbar-button, .docs-grille-gm3.docs-body-pageless .docs-main-toolbars .goog-toolbar-button, .docs-grille-gm3.docs-body-pageless .docs-main-toolbars .goog-toolbar-combo-button, .docs-grille-gm3.docs-body-pageless .docs-main-toolbars .goog-toolbar-menu-button, .docs-grille-gm3.docs-body-pageless .docs-toolbar-more-toolbar, .docs-grille-gm3.docs-body-pageless.docs-gm #docs-toolbar-wrapper {
+.docs-grille-gm3.docs-body-pageless #docs-align-palette, .docs-grille-gm3.docs-body-pageless #docs-align-palette .goog-toolbar-button, .docs-grille-gm3.docs-body-pageless .docs-main-toolbars .goog-toolbar-button, .docs-grille-gm3.docs-body-pageless .docs-main-toolbars .goog-toolbar-combo-button, .docs-grille-gm3.docs-body-pageless .docs-main-toolbars .goog-toolbar-menu-button, .docs-grille-gm3.docs-body-pageless .docs-toolbar-more-toolbar, .docs-grille-gm3.docs-body-pageless.docs-gm #docs-toolbar-wrapper,
+.docs-grille-gm3.docs-gm .docs-material #docs-toolbar-wrapper,
+.docs-grille-gm3 #docs-align-palette .goog-toolbar-button, .docs-grille-gm3 .docs-main-toolbars .goog-toolbar-button, .docs-grille-gm3 .docs-main-toolbars .goog-toolbar-combo-button, .docs-grille-gm3 .docs-main-toolbars .goog-toolbar-menu-button, .docs-grille-gm3 .trix-palette .goog-toolbar-menu-button{
     background: var(--background-docs-toolbar-wrapper);
 }
 
@@ -40,13 +46,20 @@
     background: var(--background-docs-toolbar-button-hover);
 }
 
-.docs-grille-gm3.docs-body-pageless .docs-horizontal-ruler, .docs-grille-gm3.docs-body-pageless .docs-ruler-background-inner, .docs-grille-gm3.docs-body-pageless .docs-vertical-ruler {
+.docs-grille-gm3.docs-body-pageless .docs-horizontal-ruler, .docs-grille-gm3.docs-body-pageless .docs-ruler-background-inner, .docs-grille-gm3.docs-body-pageless .docs-vertical-ruler,
+.docs-grille-gm3 .docs-horizontal-ruler, .docs-grille-gm3 .docs-ruler-background-inner, .docs-grille-gm3 .docs-vertical-ruler {
     background:  var(--background-docs-chrome) !important;
     border-color: var(--border-docs-chrome);
 }
 
-.docs-grille-gm3.docs-body-pageless #docs-editor, .docs-grille-gm3.docs-body-pageless #docs-editor-container, body.docs-grille-gm3.docs-body-pageless {
-    background: var(--background-docs-editor);
+.docs-grille-gm3 #kix-vertical-ruler:before {
+    background: var(--border-docs-chrome);
+}
+
+.docs-grille-gm3.docs-body-pageless #docs-editor, .docs-grille-gm3.docs-body-pageless #docs-editor-container, body.docs-grille-gm3.docs-body-pageless,
+.docs-grille-gm3 #docs-editor, .docs-grille-gm3 #docs-editor-container,
+.docs-grille-gm3 .kix-appview-editor, body.docs-grille-gm3 {
+    background: var(--background-docs-editor) !important;
 }
 
 .docs-grille .docs-title-input {
@@ -69,7 +82,8 @@
     color: var(--color-docs-toolbar-button);
 }
 
-.docs-grille-gm3.docs-gm.docs-body-pageless #docs-toolbar-mode-switcher {
+.docs-grille-gm3.docs-gm.docs-body-pageless #docs-toolbar-mode-switcher,
+.docs-grille-gm3.docs-gm #docs-toolbar-mode-switcher {
     background: var(--background-docs-toolbar-mode-switcher);
 }
 
@@ -88,6 +102,11 @@
 
 .docs-material-gm-select-caption {
     color: var(--color-docs-word-count);
+}
+
+.kix-documentmetrics-widget {
+    background: var(--background-docs-word-count);
+    box-shadow: 0 2px 6px 2px #0003;
 }
 
 /* comments */
@@ -119,7 +138,8 @@
     background-image: none !important;
 }
 
-.docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview, .docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview .docos-anchoredreplyview, .docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview-input-pane {
+.docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview, .docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview .docos-anchoredreplyview, .docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview-input-pane,
+.docs-grille-gm3 .docos-anchoreddocoview, .docs-grille-gm3 .docos-anchoreddocoview .docos-anchoredreplyview, .docs-grille-gm3 .docos-anchoreddocoview-input-pane {
     background: var(--background-docs-comment);
 }
 
@@ -139,7 +159,8 @@
     color: var(--color-docs-comment-text) !important;
 }
 
-.docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview:hover, .docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview:hover .docos-anchoreddocoview-input-pane, .docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview:hover .docos-anchoredreplyview {
+.docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview:hover, .docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview:hover .docos-anchoreddocoview-input-pane, .docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview:hover .docos-anchoredreplyview,
+.docs-grille-gm3 .docos-anchoreddocoview:hover, .docs-grille-gm3 .docos-anchoreddocoview:hover .docos-anchoreddocoview-input-pane, .docs-grille-gm3 .docos-anchoreddocoview:hover .docos-anchoredreplyview {
     background: var(--background-docs-comment-hover);
 }
 
@@ -186,6 +207,7 @@
     filter: brightness(1.5) grayscale(0.4);
 }
 
+/* scrollbar */
 :root {
     --background-scrollbar: #555;
     --background-scrollbar-hover: #777;
@@ -216,4 +238,27 @@
 [current-url^="https://docs.google.com/document/u/"] ::-webkit-scrollbar-thumb:active {
 	background: var(--background-scrollbar-active);
 	box-shadow: none;
+}
+
+/* outline */
+:root {
+    --color-outline: #888;
+    --color-outline-2: #777;
+}
+
+.docs-grille-gm3 .left-sidebar-container.pageless-format {
+    background: var(--background-docs-chrome);
+    box-shadow: 1px 0 0 0 var(--border-docs-chrome);
+}
+
+.kix-smart-summary-view-header-container {
+    color: var(--color-outline);
+}
+
+.docs-grille-gm3 .navigation-widget-header, .docs-grille-gm3 .outline-refresh .navigation-item, .docs-grille-gm3 .outline-refresh .navigation-item .navigation-item-level-0 {
+    color: var(--color-outline);
+}
+
+.docs-grille-gm3 .navigation-item-content:not(.navigation-item-level-0) {
+    color: var(--color-outline-2);
 }
