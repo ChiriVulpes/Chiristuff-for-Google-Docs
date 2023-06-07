@@ -311,3 +311,7 @@
 .docs-companion-app-switcher-container {
     height: calc(100vh - 64px) !important;
 }
+
+.docs-gm .docs-tiled-sidebar {
+    z-index: 506;
+}
