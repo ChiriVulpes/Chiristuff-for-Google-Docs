@@ -262,3 +262,26 @@
 .docs-grille-gm3 .navigation-item-content:not(.navigation-item-level-0) {
     color: var(--color-outline-2);
 }
+
+/* Document title (WIP) */
+:root {
+    --color-docs-title-input-focus: #fff;
+    --color-docs-document-location-label: #aaa;
+    --color-docs-document-location: #ccc;
+}
+
+.docs-grille-gm3 .docs-title-input {
+    color: transparent;
+}
+
+.docs-grille-gm3 .docs-title-input:focus {
+    color: var(--color-docs-title-input-focus);
+}
+
+.docs-parent-collections-container-prefix, .docs-parent-collections-container-text {
+    color: var(--color-docs-document-location-label);
+}
+
+.docs-parent-collections-container-folder-name {
+    color: var(--color-docs-document-location);
+}
