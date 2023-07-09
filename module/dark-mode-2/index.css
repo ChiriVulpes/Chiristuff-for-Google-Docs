@@ -30,9 +30,13 @@
 .docs-grille-gm3.docs-body-pageless #docs-chrome,
 .docs-grille-gm3 #docs-chrome:not(.docs-hub-chrome), 
 .docs-grille-gm3.docs-body-pageless #docs-chrome .docs-titlebar-buttons,
-.docs-grille #docs-header:not(.docs-hub-appbar) .docs-titlebar-buttons{
+.docs-grille-gm3 #docs-header:not(.docs-hub-appbar) .docs-titlebar-buttons {
     background: var(--background-docs-chrome);
     border-color: var(--border-docs-chrome);'
+}
+
+.kix-page-paginated {
+    outline-color: #0003;
 }
 
 
@@ -46,7 +50,7 @@
     background: var(--background-docs-toolbar-button-hover);
 }
 
-.docs-grille-gm3.docs-body-pageless .docs-horizontal-ruler, .docs-grille-gm3.docs-body-pageless .docs-ruler-background-inner, .docs-grille-gm3.docs-body-pageless .docs-vertical-ruler,
+.docs-body-pageless #kix-horizontal-ruler-container .docs-horizontal-ruler, .docs-body-pageless #kix-horizontal-ruler-container .docs-ruler-background-inner, .docs-body-pageless .docs-vertical-ruler,
 .docs-grille-gm3 .docs-horizontal-ruler, .docs-grille-gm3 .docs-ruler-background-inner, .docs-grille-gm3 .docs-vertical-ruler {
     background:  var(--background-docs-chrome) !important;
     border-color: var(--border-docs-chrome);
