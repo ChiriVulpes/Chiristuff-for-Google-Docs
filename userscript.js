@@ -4,7 +4,7 @@ let modules = [
 	// for a full list, see https://github.com/ChiriVulpes/Chiristuff-for-Google-Docs/tree/master/module
 	// if you click on one of the modules on that page, it'll show a description of what it does
 	
-	"dark-mode",
+	"dark-mode-2",
 	"zen-mode",
 	"comments-sidebar",
 	"misc",
@@ -20,9 +20,64 @@ const branch = "master";
 //////////////////////////////////////////////////////////
 
 
-
-
 (async function () {
+
+	let db;
+	const timeouts = new Map();
+	let timeoutId = 0;
+	const intervals = new Map();
+	let intervalId = 0;
+	window.chiristuff = {
+	    setTimeout(cb, ms) {
+	        const id = timeoutId++;
+	        timeouts.set(timeoutId, [cb, Date.now() + ms]);
+	        return id;
+	    },
+	    clearTimeout(id) {
+	        timeouts.delete(id);
+	    },
+	    setInterval(cb, ms) {
+	        const id = intervalId++;
+	        timeouts.set(intervalId, [cb, ms, Date.now()]);
+	        return id;
+	    },
+	    clearInterval(id) {
+	        intervals.delete(id);
+	    },
+	};
+	
+	async function loop() {
+	
+	    while (true) {
+	        db = await new Promise(resolve => {
+	            const req = indexedDB.open("chiristuff");
+	            req.onsuccess = () => resolve(req.result);
+	            req.onerror = () => resolve();
+	        });
+	        if (db) db.close();
+	        db = undefined;
+	
+	        let ct = Date.now();
+	        
+	        for (const [id, [cb, time]] of [...timeouts]) {
+	            if (ct >= time) {
+	                try {
+	                    cb();
+	                } catch {}
+	                timeouts.delete(id);
+	            }
+	        }
+	        
+	        for (const [id, [cb, interval, last]] of [...intervals]) {
+	            if (ct >= last + interval) {
+	                try {
+	                    cb();
+	                    intervals.set(id, [cb, interval, ct]);
+	                } catch {}
+	            }
+	        }
+	    }
+	}
 	
 	async function getFile(file) {
 		const baseurl = `https://raw.githubusercontent.com/ChiriVulpes/Chiristuff-for-Google-Docs/${branch}`;
@@ -51,7 +106,7 @@ const branch = "master";
 		.join("\n\n\n");
 	
 	const iframeURLs = await getFile("iframes.json");
-	setInterval(() => {
+	window.chiristuff.setInterval(() => {
 	
 		const documents = [document];
 		const iframes = document.querySelectorAll(iframeURLs
