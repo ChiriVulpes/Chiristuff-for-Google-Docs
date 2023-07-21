@@ -6,7 +6,6 @@ let modules = [
 	
 	"dark-mode-2",
 	"zen-mode",
-	"comments-sidebar",
 	"misc",
 ];
 
