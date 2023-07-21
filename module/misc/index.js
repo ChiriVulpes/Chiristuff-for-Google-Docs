@@ -1,5 +1,5 @@
 
-setInterval(() => {
+chiristuff.setInterval(() => {
 	
 	// add a class for when you're in the revisions view
 	document.documentElement.classList.toggle("viewing-revisions", document.querySelector("#docs-revisions-sidebar:not([style*='display: none'])"));
