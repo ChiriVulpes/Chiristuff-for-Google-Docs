@@ -13,7 +13,7 @@ function toggleZenModeNoComments(e) {
 	if (e) e.preventDefault();
 }
 
-chiristuff.setInterval(() => {
+setInterval(() => {
 	const commentsButton = document.getElementById("docs-docos-commentsbutton");
 	if (commentsButton) commentsButton.addEventListener("contextmenu", toggleZenModeNoComments);
 	
