@@ -119,6 +119,10 @@ const branch = "master";
 				documents.push(frameDocument);
 			});
 
+			
+		const policy = trustedTypes.createPolicy("chiristuff", {
+    			createScript: script => script,
+		});
 		
 		for (const doc of documents) {
 			doc.documentElement.setAttribute("current-url", doc.URL);
@@ -144,7 +148,7 @@ const branch = "master";
 
 				const script = document.createElement("script");
 				script.setAttribute("name", name);
-				script.textContent = `/* ${name} */\n\n${js}`;
+				script.textContent = policy.createScript(`/* ${name} */\n\n${js}`);
 				doc.head.appendChild(script);
 			}
 		}
