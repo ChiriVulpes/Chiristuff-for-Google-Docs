@@ -211,6 +211,14 @@
     filter: brightness(1.5) grayscale(0.4);
 }
 
+.docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview .docos-show-less, .docs-grille-gm3.docs-body-pageless .docos-anchoreddocoview .docos-show-more, .docs-grille-gm3.docs-body-pageless .docos-replyview-first .docos-show-more {
+	background: var(--background-docs-comment);
+}
+
+.docs-grille-gm3 .docos-show-less, .docs-grille-gm3 .docos-show-more {
+	color: var(--color-docs-button-standard);
+}
+
 /* scrollbar */
 :root {
     --background-scrollbar: #555;
